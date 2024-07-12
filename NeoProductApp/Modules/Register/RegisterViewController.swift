@@ -9,14 +9,22 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        setUpView()
+    }
+    
+    func setUpView(){
+        self.title = "Register"
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        navigationController?.navigationBar.tintColor = UIColor.white
         tableView.register(UINib(nibName: "RegisterTableViewCell", bundle: nil), forCellReuseIdentifier: "RegisterTableViewCell")
-        tableView.separatorStyle = .none
-        //tableView.backgroundColor = .red
         tableView.register(UINib(nibName: "GenderTableViewCell", bundle: nil), forCellReuseIdentifier: "GenderTableViewCell")
         tableView.register(UINib(nibName: "RegisterButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "RegisterButtonTableViewCell")
     }

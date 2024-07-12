@@ -14,6 +14,16 @@
 		B54A9BBA2C3FEE4000CA1E65 /* GenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54A9BB82C3FEE4000CA1E65 /* GenderTableViewCell.xib */; };
 		B54A9BBD2C3FF48300CA1E65 /* RegisterButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A9BBB2C3FF48300CA1E65 /* RegisterButtonTableViewCell.swift */; };
 		B54A9BBE2C3FF48300CA1E65 /* RegisterButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54A9BBC2C3FF48300CA1E65 /* RegisterButtonTableViewCell.xib */; };
+		B54A9BC02C3FFED700CA1E65 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A9BBF2C3FFED700CA1E65 /* HomeScreenViewController.swift */; };
+		B54A9BCA2C40094F00CA1E65 /* DisplayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A9BC82C40094F00CA1E65 /* DisplayCollectionViewCell.swift */; };
+		B54A9BCB2C40094F00CA1E65 /* DisplayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54A9BC92C40094F00CA1E65 /* DisplayCollectionViewCell.xib */; };
+		B54A9BCF2C40098000CA1E65 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54A9BCD2C40098000CA1E65 /* CategoryCollectionViewCell.swift */; };
+		B54A9BD02C40098000CA1E65 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54A9BCE2C40098000CA1E65 /* CategoryCollectionViewCell.xib */; };
+		B54A9BD32C40117C00CA1E65 /* HomeScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54A9BD22C40117C00CA1E65 /* HomeScreenStoryboard.storyboard */; };
+		B54A9BD52C4014F500CA1E65 /* RegisterViewStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54A9BD42C4014F500CA1E65 /* RegisterViewStoryboard.storyboard */; };
+		B5614CBB2C40E97F004314EB /* TextFieldHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5614CBA2C40E97F004314EB /* TextFieldHelper.swift */; };
+		B5614CBD2C410667004314EB /* ForgotPasswordStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5614CBC2C410667004314EB /* ForgotPasswordStoryboard.storyboard */; };
+		B5614CC02C4108D3004314EB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5614CBF2C4108D3004314EB /* ResetPasswordViewController.swift */; };
 		B5FE53702C3E4C8A00629919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE536F2C3E4C8A00629919 /* AppDelegate.swift */; };
 		B5FE53722C3E4C8A00629919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE53712C3E4C8A00629919 /* SceneDelegate.swift */; };
 		B5FE53742C3E4C8A00629919 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE53732C3E4C8A00629919 /* LoginViewController.swift */; };
@@ -63,6 +73,16 @@
 		B54A9BB82C3FEE4000CA1E65 /* GenderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderTableViewCell.xib; sourceTree = "<group>"; };
 		B54A9BBB2C3FF48300CA1E65 /* RegisterButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButtonTableViewCell.swift; sourceTree = "<group>"; };
 		B54A9BBC2C3FF48300CA1E65 /* RegisterButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterButtonTableViewCell.xib; sourceTree = "<group>"; };
+		B54A9BBF2C3FFED700CA1E65 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		B54A9BC82C40094F00CA1E65 /* DisplayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCollectionViewCell.swift; sourceTree = "<group>"; };
+		B54A9BC92C40094F00CA1E65 /* DisplayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayCollectionViewCell.xib; sourceTree = "<group>"; };
+		B54A9BCD2C40098000CA1E65 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		B54A9BCE2C40098000CA1E65 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		B54A9BD22C40117C00CA1E65 /* HomeScreenStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeScreenStoryboard.storyboard; sourceTree = "<group>"; };
+		B54A9BD42C4014F500CA1E65 /* RegisterViewStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewStoryboard.storyboard; sourceTree = "<group>"; };
+		B5614CBA2C40E97F004314EB /* TextFieldHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldHelper.swift; sourceTree = "<group>"; };
+		B5614CBC2C410667004314EB /* ForgotPasswordStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordStoryboard.storyboard; sourceTree = "<group>"; };
+		B5614CBF2C4108D3004314EB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		B5FE536C2C3E4C8A00629919 /* NeoProductApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoProductApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FE536F2C3E4C8A00629919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FE53712C3E4C8A00629919 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,15 +148,55 @@
 			isa = PBXGroup;
 			children = (
 				B54A9BB02C3FDD9D00CA1E65 /* ForgotPasswordViewController.swift */,
+				B5614CBC2C410667004314EB /* ForgotPasswordStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		B54A9BB22C3FDF2C00CA1E65 /* New Group */ = {
+		B54A9BB22C3FDF2C00CA1E65 /* HomeScreenViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B54A9BD12C400A6000CA1E65 /* View */,
 			);
-			path = "New Group";
+			path = HomeScreenViewController;
+			sourceTree = "<group>";
+		};
+		B54A9BC12C40029600CA1E65 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B54A9BC82C40094F00CA1E65 /* DisplayCollectionViewCell.swift */,
+				B54A9BC92C40094F00CA1E65 /* DisplayCollectionViewCell.xib */,
+				B54A9BCD2C40098000CA1E65 /* CategoryCollectionViewCell.swift */,
+				B54A9BCE2C40098000CA1E65 /* CategoryCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B54A9BD12C400A6000CA1E65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B54A9BBF2C3FFED700CA1E65 /* HomeScreenViewController.swift */,
+				B54A9BD22C40117C00CA1E65 /* HomeScreenStoryboard.storyboard */,
+				B54A9BC12C40029600CA1E65 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B54A9BD62C4016B700CA1E65 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE53A62C3E534D00629919 /* ProductListTableViewCell.swift */,
+				B5FE53A72C3E534D00629919 /* ProductListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B5614CBE2C4108BA004314EB /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B5614CBF2C4108D3004314EB /* ResetPasswordViewController.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		B5FE53632C3E4C8A00629919 = {
@@ -167,8 +227,6 @@
 				B5FE53782C3E4C8F00629919 /* Assets.xcassets */,
 				B5FE537A2C3E4C8F00629919 /* LaunchScreen.storyboard */,
 				B5FE537D2C3E4C8F00629919 /* Info.plist */,
-				B5FE53A62C3E534D00629919 /* ProductListTableViewCell.swift */,
-				B5FE53A72C3E534D00629919 /* ProductListTableViewCell.xib */,
 			);
 			path = NeoProductApp;
 			sourceTree = "<group>";
@@ -202,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FE53A12C3E506900629919 /* RegisterViewController.swift */,
+				B54A9BD42C4014F500CA1E65 /* RegisterViewStoryboard.storyboard */,
 				B5FE53A52C3E509D00629919 /* Cell */,
 			);
 			path = Register;
@@ -246,8 +305,8 @@
 		B5FE53B22C3E6C1200629919 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B5FE53CA2C3E8F8100629919 /* Cell */,
 				B5FE53AE2C3E5D1B00629919 /* ProductDetailsViewController.swift */,
+				B5FE53CA2C3E8F8100629919 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FE53AB2C3E57A100629919 /* ProductListViewController.swift */,
+				B54A9BD62C4016B700CA1E65 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,13 +379,15 @@
 		B5FE53C72C3E842900629919 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B54A9BB22C3FDF2C00CA1E65 /* New Group */,
+				B5614CBE2C4108BA004314EB /* Account */,
+				B54A9BB22C3FDF2C00CA1E65 /* HomeScreenViewController */,
 				B54A9BAE2C3FDD6000CA1E65 /* Forgotpassword */,
 				B5FE53C82C3E846400629919 /* Initial screens */,
 				B5FE539F2C3E4FFA00629919 /* Login */,
 				B5FE53A02C3E500A00629919 /* Register */,
 				B5FE53AA2C3E576E00629919 /* ProductList */,
 				B5FE53AD2C3E5CF400629919 /* ProductDetails */,
+				B5614CBA2C40E97F004314EB /* TextFieldHelper.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -451,11 +513,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54A9BD32C40117C00CA1E65 /* HomeScreenStoryboard.storyboard in Resources */,
 				B54A9BBE2C3FF48300CA1E65 /* RegisterButtonTableViewCell.xib in Resources */,
 				B5FE537C2C3E4C8F00629919 /* LaunchScreen.storyboard in Resources */,
+				B5614CBD2C410667004314EB /* ForgotPasswordStoryboard.storyboard in Resources */,
 				B5FE53A92C3E534D00629919 /* ProductListTableViewCell.xib in Resources */,
+				B54A9BCB2C40094F00CA1E65 /* DisplayCollectionViewCell.xib in Resources */,
 				B54A9BBA2C3FEE4000CA1E65 /* GenderTableViewCell.xib in Resources */,
 				B54A9BB62C3FE59200CA1E65 /* RegisterTableViewCell.xib in Resources */,
+				B54A9BD02C40098000CA1E65 /* CategoryCollectionViewCell.xib in Resources */,
+				B54A9BD52C4014F500CA1E65 /* RegisterViewStoryboard.storyboard in Resources */,
 				B5FE53792C3E4C8F00629919 /* Assets.xcassets in Resources */,
 				B5FE53772C3E4C8A00629919 /* Main.storyboard in Resources */,
 			);
@@ -485,19 +552,24 @@
 				B5FE53742C3E4C8A00629919 /* LoginViewController.swift in Sources */,
 				B5FE53BA2C3E6CDA00629919 /* Constants.swift in Sources */,
 				B5FE53702C3E4C8A00629919 /* AppDelegate.swift in Sources */,
+				B5614CC02C4108D3004314EB /* ResetPasswordViewController.swift in Sources */,
 				B5FE53B72C3E6C5F00629919 /* NetworkManager.swift in Sources */,
 				B5FE53AC2C3E57A100629919 /* ProductListViewController.swift in Sources */,
 				B5FE53722C3E4C8A00629919 /* SceneDelegate.swift in Sources */,
 				B5FE53B12C3E6BCC00629919 /* ProductsListViewModel.swift in Sources */,
 				B5FE53A22C3E506900629919 /* RegisterViewController.swift in Sources */,
+				B54A9BCF2C40098000CA1E65 /* CategoryCollectionViewCell.swift in Sources */,
 				B5FE53CC2C3E8FBB00629919 /* ProductDetailsViewCell.swift in Sources */,
+				B54A9BC02C3FFED700CA1E65 /* HomeScreenViewController.swift in Sources */,
 				B5FE53C32C3E83F200629919 /* ProductDetailsViewModel.swift in Sources */,
 				B54A9BB92C3FEE4000CA1E65 /* GenderTableViewCell.swift in Sources */,
 				B54A9BB12C3FDD9D00CA1E65 /* ForgotPasswordViewController.swift in Sources */,
 				B5FE53A82C3E534D00629919 /* ProductListTableViewCell.swift in Sources */,
 				B5FE53AF2C3E5D1B00629919 /* ProductDetailsViewController.swift in Sources */,
 				B54A9BBD2C3FF48300CA1E65 /* RegisterButtonTableViewCell.swift in Sources */,
+				B54A9BCA2C40094F00CA1E65 /* DisplayCollectionViewCell.swift in Sources */,
 				B5FE53C62C3E842100629919 /* DetailsManager.swift in Sources */,
+				B5614CBB2C40E97F004314EB /* TextFieldHelper.swift in Sources */,
 				B5FE53BF2C3E82C300629919 /* ProductsListModel.swift in Sources */,
 				B54A9BB52C3FE59200CA1E65 /* RegisterTableViewCell.swift in Sources */,
 				B5FE53BC2C3E6F4500629919 /* ProductDetailsModel.swift in Sources */,
