@@ -33,8 +33,8 @@ class LoginViewController: UIViewController {
     }
   
     @IBAction func loginButtonTapped(_ sender: Any) {
-       // let storyboard = UIStoryboard(name: "HomeScreenStoryboard", bundle: nil)
-        let vc = storyboard?.instantiateViewController(identifier: "ResetPasswordViewController") as? ResetPasswordViewController
+        let storyboard = UIStoryboard(name: "HomeScreenStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "HomeScreenViewController") as? HomeScreenViewController
         navigationController?.pushViewController(vc!, animated: true)
         
     }

@@ -6,15 +6,30 @@
 //
 
 import UIKit
+import SideMenu
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//                
+//                // Set up SideMenu
+//                let sideMenuController = SidemenuViewController()
+//                SideMenuManager.default.leftMenuNavigationController = sideMenuController
+//                
+//                // Set initial view controller
+//                let homeScreenViewController = HomeScreenViewController()
+//                let navigationController = UINavigationController(rootViewController: homeScreenViewController)
+//                window?.rootViewController = navigationController
+//                
+//                // Show the window
+//                window?.makeKeyAndVisible()
+                
+                return true
     }
 
     // MARK: UISceneSession Lifecycle

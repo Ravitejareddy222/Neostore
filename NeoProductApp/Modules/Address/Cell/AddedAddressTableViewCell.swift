@@ -1,0 +1,26 @@
+//
+//  AddedAddressTableViewCell.swift
+//  NeoProductApp
+//
+//  Created by Neo on 15/07/24.
+//
+
+import UIKit
+
+class AddedAddressTableViewCell: UITableViewCell {
+    @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}

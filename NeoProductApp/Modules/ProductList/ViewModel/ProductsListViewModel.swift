@@ -12,7 +12,6 @@ class ProductsListViewModel {
     var products: [Product?] = []
     
     func getUserDetails(){
-       
         NetworkManager.shared.apiCall()
         print(products)
     }

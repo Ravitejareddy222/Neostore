@@ -75,6 +75,37 @@
             </objects>
             <point key="canvasLocation" x="3175.1999999999998" y="15.517241379310345"/>
         </scene>
+        <!--Sidemenu View Controller-->
+        <scene sceneID="kIy-NV-ePK">
+            <objects>
+                <viewController storyboardIdentifier="SidemenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LZJ-Ii-ywj" customClass="SidemenuViewController" customModule="NeoProductApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wmB-3d-J0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BhB-Yc-ghY">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5uD-3b-Knb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BhB-Yc-ghY" firstAttribute="top" secondItem="wmB-3d-J0Y" secondAttribute="top" id="93S-FQ-Dan"/>
+                            <constraint firstItem="BhB-Yc-ghY" firstAttribute="trailing" secondItem="5uD-3b-Knb" secondAttribute="trailing" id="JMp-uu-Ve5"/>
+                            <constraint firstAttribute="bottom" secondItem="BhB-Yc-ghY" secondAttribute="bottom" id="KCx-pm-PrV"/>
+                            <constraint firstItem="BhB-Yc-ghY" firstAttribute="leading" secondItem="5uD-3b-Knb" secondAttribute="leading" id="UEV-Tz-pua"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="290" height="852"/>
+                    <connections>
+                        <outlet property="tableView" destination="BhB-Yc-ghY" id="hnd-Fa-6Rf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vev-gJ-2cE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4009.1603053435115" y="14.788732394366198"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

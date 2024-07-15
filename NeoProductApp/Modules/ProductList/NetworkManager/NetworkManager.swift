@@ -43,7 +43,7 @@ class NetworkManager {
             do {
                 let response = try JSONDecoder().decode(ProductResponse.self, from: data)
                 self.products = response.data
-                 //print("Products: \(self.products)")
+               // print("Products: \(self.products)")
 
             } catch {
                 print("Error decoding JSON: \(error.localizedDescription)")
