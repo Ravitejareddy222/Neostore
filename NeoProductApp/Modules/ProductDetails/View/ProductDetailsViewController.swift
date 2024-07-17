@@ -17,6 +17,8 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productDescription: UITextView!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +29,27 @@ class ProductDetailsViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
         DetailsManager.detailsManager.getProductDetails()
+        collectionView.register(UINib(nibName: "DisplayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DisplayCollectionViewCell")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+                imageView.isUserInteractionEnabled = true
+                imageView.addGestureRecognizer(tapGesture)
     }
+    
+    @objc func imageTapped() {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ProductQuantityViewController") as! ProductQuantityViewController
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .custom
+            present(vc, animated: true, completion: nil)
+        }
 }
 
 extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductDetailsViewCell", for: indexPath) as? ProductDetailsViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DisplayCollectionViewCell", for: indexPath) as? DisplayCollectionViewCell
         return cell ?? UICollectionViewCell()
     }
     

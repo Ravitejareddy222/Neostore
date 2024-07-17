@@ -28,7 +28,7 @@
                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="editProfileButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Cc-Mw-FDA"/>
+                            <action selector="editProfileButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="l9k-Xs-gOX"/>
                         </connections>
                     </button>
                 </subviews>
@@ -42,7 +42,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="editButton" destination="Uwo-sl-XtS" id="kPa-br-P7Z"/>
+                <outlet property="editButton" destination="Uwo-sl-XtS" id="T5t-bA-YWD"/>
             </connections>
             <point key="canvasLocation" x="100.76335877862596" y="25"/>
         </tableViewCell>

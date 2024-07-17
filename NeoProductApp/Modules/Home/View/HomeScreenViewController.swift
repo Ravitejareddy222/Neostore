@@ -10,19 +10,27 @@ import SideMenu
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet weak var displayCollectionView: UICollectionView!
-    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
     
     var menu: SideMenuNavigationController?
-
+    let images = [
+        ["coffeetable", "coffeetable", "coffeetable"],
+        ["coffeetable", "coffeetable"],
+        ["coffeetable", "coffeetable"]
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        sideMenuSetUp()
+    }
+    
+    func sideMenuSetUp(){
         let sideMenuVC = storyboard?.instantiateViewController(identifier: "SidemenuViewController") as!SidemenuViewController
         menu = SideMenuNavigationController(rootViewController: sideMenuVC)
         menu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
-        
     }
     
     func setUpView(){
@@ -30,12 +38,18 @@ class HomeScreenViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         displayCollectionView?.delegate = self
         displayCollectionView?.dataSource = self
-        categoryCollectionView?.delegate = self
-        categoryCollectionView?.dataSource = self
+       // displayCollectionView.isPagingEnabled = true
+       
+    
         displayCollectionView?.register(UINib(nibName: "DisplayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DisplayCollectionViewCell")
-        categoryCollectionView?.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+        displayCollectionView?.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
         let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(menuButtonTapped))
         navigationItem.leftBarButtonItem = leftBarButton
+        
+        let layout = createCompositionalLayout()
+        displayCollectionView.collectionViewLayout = layout
+            
+    
     }
     
     @objc func menuButtonTapped(){
@@ -43,27 +57,83 @@ class HomeScreenViewController: UIViewController {
     }
 }
 
-extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == displayCollectionView {
-            return 4
-        } else if collectionView == categoryCollectionView {
-            return 4
+        switch section {
+        case 0:
+            return images[0].count
+        case 1, 2:
+            return 2
+        default:
+            return 0
         }
-        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == displayCollectionView {
+        if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DisplayCollectionViewCell", for: indexPath) as! DisplayCollectionViewCell
+            cell.diaplayImage.image = UIImage(named: images[indexPath.section][indexPath.item])
             return cell
-        } else if collectionView == categoryCollectionView {
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
+            
             return cell
         }
-        return UICollectionViewCell()
     }
     
+    
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { sectionIndex, environment in
+            switch sectionIndex {
+            case 0:
+                return self.createHorizontalSection()
+            case 1, 2:
+                return self.createVerticalSection()
+            default:
+                return nil
+            }
+        }
+    }
+    
+    func createHorizontalSection() -> NSCollectionLayoutSection {
+            let screenWidth = UIScreen.main.bounds.width
+            let itemWidth = screenWidth
+            let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(itemWidth), heightDimension: .absolute(300))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(itemWidth), heightDimension: .absolute(300))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+            let section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .continuous
+            section.interGroupSpacing = 10
+            
+            return section
+        }
+    
+    func createVerticalSection() -> NSCollectionLayoutSection {
+        let screenWidth = UIScreen.main.bounds.width
+        let itemWidth = (screenWidth - 40) / 2
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(itemWidth), heightDimension: .absolute(itemWidth))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 10)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(itemWidth))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 2.5, leading: 10, bottom: 2.5, trailing: 10)
+        section.interGroupSpacing = 10
+        
+        return section
+    }
     
 }
 

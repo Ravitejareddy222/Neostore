@@ -13,7 +13,8 @@ class DisplayCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        diaplayImage.contentMode = .scaleToFill
+        diaplayImage.clipsToBounds = true
     }
 
 }

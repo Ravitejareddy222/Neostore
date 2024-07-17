@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +26,7 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
-                <color key="backgroundColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" name="customred"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="BiM-Ou-PMk" secondAttribute="bottom" constant="5" id="1eu-q1-MBw"/>
                     <constraint firstItem="BiM-Ou-PMk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="FQF-Q8-tck"/>
@@ -40,4 +41,9 @@
             <point key="canvasLocation" x="57.251908396946561" y="38.732394366197184"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="customred">
+            <color red="0.9137254901960784" green="0.10980392156862745" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

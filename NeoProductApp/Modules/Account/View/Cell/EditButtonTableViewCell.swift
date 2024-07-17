@@ -22,11 +22,9 @@ class EditButtonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func editProfileButtonTapped(_ sender: Any){
-        //enableEditMode()
+    @IBAction func editProfileButtonTapped(_ sender: Any) {
+        
         editButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         editButton.setTitle("SUBMIT", for: .normal)
-       
     }
-   
 }

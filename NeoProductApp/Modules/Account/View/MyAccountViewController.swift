@@ -11,6 +11,7 @@ class MyAccountViewController: UIViewController {
      
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resetPasswordButton: UIButton!
+    
     var isEditMode: Bool = false
     
     override func viewDidLoad() {
@@ -21,10 +22,9 @@ class MyAccountViewController: UIViewController {
         tableView.register(UINib(nibName: "MyAccountTableViewCell", bundle: nil), forCellReuseIdentifier: "MyAccountTableViewCell")
         tableView.register(UINib(nibName: "ProfilePictureTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfilePictureTableViewCell")
         tableView.register(UINib(nibName: "EditButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "EditButtonTableViewCell")
-        isEditMode.toggle()
         
     }
-   
+    
 
     @IBAction func resetPasswordButtonTapped(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "ResetPasswordViewController") as? ResetPasswordViewController
@@ -74,5 +74,12 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 6 {
+            resetPasswordButton.isHidden = true
+        
+        }
     }
 }

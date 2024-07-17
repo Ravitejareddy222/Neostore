@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,20 +134,94 @@
             </objects>
             <point key="canvasLocation" x="1018" y="3"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cYa-8u-Vwg">
+        <!--Store Locator View Controller-->
+        <scene sceneID="AG2-uU-18T">
             <objects>
-                <viewController id="eSi-Fz-ofH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fN9-ag-STC">
+                <viewController storyboardIdentifier="StoreLocatorViewController" id="0gH-vy-6qY" customClass="StoreLocatorViewController" customModule="NeoProductApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1mZ-Jl-ZTQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ikN-ei-RR5"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mL9-1O-cww">
+                                <rect key="frame" x="0.0" y="59" width="393" height="261"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="261" id="HgM-KN-9Cx"/>
+                                </constraints>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nhR-t9-crd">
+                                <rect key="frame" x="0.0" y="320" width="393" height="532"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreLocatorTableViewCell" rowHeight="90" id="k5I-c5-s4L" customClass="StoreLocatorTableViewCell" customModule="NeoProductApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k5I-c5-s4L" id="iAv-48-yy7">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="storelocator" translatesAutoresizingMaskIntoConstraints="NO" id="J8G-lS-2Gh">
+                                                    <rect key="frame" x="20" y="11" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="XtX-72-gbo"/>
+                                                        <constraint firstAttribute="width" constant="50" id="a8A-tu-1iz"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKY LAND STORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXS-aY-2AO">
+                                                    <rect key="frame" x="100" y="11" width="253" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="tR1-3R-ZWI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6335, Edgewood Road, Reistertown, MD 21136" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-DZ-FtF">
+                                                    <rect key="frame" x="100" y="39" width="253" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="oc7-Oc-pI0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.38823529410000002" green="0.39341327549999999" blue="0.39608520270000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y69-DZ-FtF" firstAttribute="trailing" secondItem="iAv-48-yy7" secondAttribute="trailingMargin" constant="-20" id="8HI-Zi-Tn6"/>
+                                                <constraint firstItem="Y69-DZ-FtF" firstAttribute="bottom" secondItem="iAv-48-yy7" secondAttribute="bottomMargin" constant="-8" id="Htz-oN-aUz"/>
+                                                <constraint firstItem="Y69-DZ-FtF" firstAttribute="top" secondItem="cXS-aY-2AO" secondAttribute="bottom" id="IIT-2s-Ahn"/>
+                                                <constraint firstItem="J8G-lS-2Gh" firstAttribute="top" secondItem="iAv-48-yy7" secondAttribute="topMargin" id="In8-Hn-epa"/>
+                                                <constraint firstItem="cXS-aY-2AO" firstAttribute="trailing" secondItem="iAv-48-yy7" secondAttribute="trailingMargin" constant="-20" id="XQo-06-LOq"/>
+                                                <constraint firstItem="cXS-aY-2AO" firstAttribute="top" secondItem="iAv-48-yy7" secondAttribute="topMargin" id="gN6-cO-oeu"/>
+                                                <constraint firstItem="cXS-aY-2AO" firstAttribute="leading" secondItem="J8G-lS-2Gh" secondAttribute="trailing" constant="30" id="phF-fC-TB8"/>
+                                                <constraint firstItem="J8G-lS-2Gh" firstAttribute="leading" secondItem="iAv-48-yy7" secondAttribute="leadingMargin" id="pq4-Pp-QkY"/>
+                                                <constraint firstItem="Y69-DZ-FtF" firstAttribute="leading" secondItem="J8G-lS-2Gh" secondAttribute="trailing" constant="30" id="w7E-u5-NRI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kt1-qT-vIG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mL9-1O-cww" firstAttribute="leading" secondItem="Kt1-qT-vIG" secondAttribute="leading" id="7ai-OT-JjI"/>
+                            <constraint firstItem="mL9-1O-cww" firstAttribute="trailing" secondItem="Kt1-qT-vIG" secondAttribute="trailing" id="GXF-fv-0Ih"/>
+                            <constraint firstItem="mL9-1O-cww" firstAttribute="top" secondItem="Kt1-qT-vIG" secondAttribute="top" id="QZ2-Pb-8D7"/>
+                            <constraint firstItem="nhR-t9-crd" firstAttribute="trailing" secondItem="Kt1-qT-vIG" secondAttribute="trailing" id="WSr-BV-yec"/>
+                            <constraint firstAttribute="bottom" secondItem="nhR-t9-crd" secondAttribute="bottom" id="atE-C5-ljM"/>
+                            <constraint firstItem="nhR-t9-crd" firstAttribute="leading" secondItem="Kt1-qT-vIG" secondAttribute="leading" id="fwV-EZ-b5h"/>
+                            <constraint firstItem="nhR-t9-crd" firstAttribute="top" secondItem="mL9-1O-cww" secondAttribute="bottom" id="mrB-aW-1Rf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="storeMapView" destination="mL9-1O-cww" id="BMg-Zd-Ar1"/>
+                        <outlet property="tableView" destination="nhR-t9-crd" id="V2H-gM-ReZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aPD-pF-8cp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ajt-cp-A2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043.5114503816792" y="27.464788732394368"/>
+            <point key="canvasLocation" x="1726" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lgj-Q5-3mv">
@@ -169,6 +244,7 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="storelocator" width="275" height="183"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

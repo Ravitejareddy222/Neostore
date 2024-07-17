@@ -11,8 +11,8 @@ import SideMenu
 class SidemenuViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var menuList = ["MyCart", "Tables", "Chairs", "Sofas", "Cupboards", "My Account", "Store Locator", "My Orders", "Logout" ]
-    var menuImages = ["mycart", "table", "sofa", "chair", "cupboard", "personr", "storelocator", "orders", "logout"]
+    var menuList = ["MyCart", "Tables", "Sofas", "Chairs", "Cupboards", "My Account", "Store Locator", "My Orders", "Logout" ]
+    var menuImages = ["cart", "table", "sofa", "chair", "cupboard-icon", "person", "locator", "orders", "logout"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class SidemenuViewController: UIViewController {
                 }
         tableView.delegate = self
         tableView.dataSource = self
-       tableView.backgroundColor = .black
+        tableView.backgroundColor = .black
         tableView.register(UINib(nibName: "SidemenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SidemenuTableViewCell")
      }
 }
@@ -33,59 +33,62 @@ extension SidemenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SidemenuTableViewCell") as?  SidemenuTableViewCell
-        let item = indexPath.row
-        cell?.listLabel.text = menuList[item]
-        cell?.backgroundColor = .black
-        cell?.listLabel.textColor = .white
-        cell?.leftImageIcon.image = UIImage(named: menuList[item])
-        cell?.leftImageIcon.tintColor = .white
-        
-//        if let image = UIImage(named: menuList[item]) {
-//                cell?.leftImageIcon.image = image.withRenderingMode(.alwaysTemplate)
-//                cell?.leftImageIcon.tintColor = .white
-//            } else {
-//                cell?.leftImageIcon.image = nil
-//            }
-                                    
-        return cell ?? UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SidemenuTableViewCell") as?  SidemenuTableViewCell
+            let item = indexPath.row
+            cell?.listLabel.text = menuList[item]
+            cell?.backgroundColor = .black
+            cell?.listLabel.textColor = .white
+            let imageName = menuImages[item]
+            cell?.leftImageIcon.image = UIImage(named: imageName)
+            return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             let storyboard = UIStoryboard(name: "OrdersStoryboard", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MyCartViewController") as? MyCartViewController
             navigationController?.pushViewController(vc!, animated: true)
-        }
-        if indexPath.row == 5 {
+            
+        case 1:
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        
+        case 2:
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        case 3:
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+
+        case 4:
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        case 5:
             let storyboard = UIStoryboard(name: "MyAccountStoryboard", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MyAccountViewController") as? MyAccountViewController
             navigationController?.pushViewController(vc!, animated: true)
-        }
-        if indexPath.row == 1 {
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+        case 6:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "StoreLocatorViewController") as? StoreLocatorViewController
             navigationController?.pushViewController(vc!, animated: true)
-        }
-        if indexPath.row == 1 {
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
-            navigationController?.pushViewController(vc!, animated: true)
-        }
-        if indexPath.row == 7 {
+            
+        case 7:
             let storyboard = UIStoryboard(name: "OrdersStoryboard", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MyOrdersTableViewController") as? MyOrdersTableViewController
             navigationController?.pushViewController(vc!, animated: true)
-        }
-        if indexPath.row == 8 {
-            let storyboard = UIStoryboard(name: "AddressStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "AddressListViewController") as? AddressListViewController
+        case 8:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
             navigationController?.pushViewController(vc!, animated: true)
+            
+        default:
+            break
         }
     }
-    
-   
-    
 }
