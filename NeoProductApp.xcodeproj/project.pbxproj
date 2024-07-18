@@ -57,6 +57,13 @@
 		B5DEE7EA2C42457D003B32AE /* MyAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5DEE7E82C42457D003B32AE /* MyAccountTableViewCell.xib */; };
 		B5DEE7ED2C4247B0003B32AE /* ProfilePictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DEE7EB2C4247B0003B32AE /* ProfilePictureTableViewCell.swift */; };
 		B5DEE7EE2C4247B0003B32AE /* ProfilePictureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5DEE7EC2C4247B0003B32AE /* ProfilePictureTableViewCell.xib */; };
+		B5E4E3662C48D4DC00650B91 /* SofaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4E3652C48D4DC00650B91 /* SofaListViewController.swift */; };
+		B5E4E3682C48D51B00650B91 /* CupboardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4E3672C48D51B00650B91 /* CupboardListViewController.swift */; };
+		B5E4E36A2C48D53300650B91 /* ChairsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4E3692C48D53300650B91 /* ChairsListViewController.swift */; };
+		B5E4E3732C490B1E00650B91 /* TotalPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4E3712C490B1E00650B91 /* TotalPriceTableViewCell.swift */; };
+		B5E4E3742C490B1E00650B91 /* TotalPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E4E3722C490B1E00650B91 /* TotalPriceTableViewCell.xib */; };
+		B5E4E3762C490F8300650B91 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4E3752C490F8300650B91 /* CustomButton.swift */; };
+		B5E4E3782C49209C00650B91 /* ViewControllerTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E4E3772C49209C00650B91 /* ViewControllerTitleExtension.swift */; };
 		B5FE53702C3E4C8A00629919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE536F2C3E4C8A00629919 /* AppDelegate.swift */; };
 		B5FE53722C3E4C8A00629919 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE53712C3E4C8A00629919 /* SceneDelegate.swift */; };
 		B5FE53742C3E4C8A00629919 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE53732C3E4C8A00629919 /* LoginViewController.swift */; };
@@ -148,6 +155,13 @@
 		B5DEE7E82C42457D003B32AE /* MyAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAccountTableViewCell.xib; sourceTree = "<group>"; };
 		B5DEE7EB2C4247B0003B32AE /* ProfilePictureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureTableViewCell.swift; sourceTree = "<group>"; };
 		B5DEE7EC2C4247B0003B32AE /* ProfilePictureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePictureTableViewCell.xib; sourceTree = "<group>"; };
+		B5E4E3652C48D4DC00650B91 /* SofaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaListViewController.swift; sourceTree = "<group>"; };
+		B5E4E3672C48D51B00650B91 /* CupboardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardListViewController.swift; sourceTree = "<group>"; };
+		B5E4E3692C48D53300650B91 /* ChairsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairsListViewController.swift; sourceTree = "<group>"; };
+		B5E4E3712C490B1E00650B91 /* TotalPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceTableViewCell.swift; sourceTree = "<group>"; };
+		B5E4E3722C490B1E00650B91 /* TotalPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalPriceTableViewCell.xib; sourceTree = "<group>"; };
+		B5E4E3752C490F8300650B91 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		B5E4E3772C49209C00650B91 /* ViewControllerTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTitleExtension.swift; sourceTree = "<group>"; };
 		B5FE536C2C3E4C8A00629919 /* NeoProductApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoProductApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FE536F2C3E4C8A00629919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FE53712C3E4C8A00629919 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +347,8 @@
 				B5DEE7DA2C422D60003B32AE /* MyOrdersTableViewCell.xib */,
 				B5DEE7E12C423DE1003B32AE /* OrderIDTableViewCell.swift */,
 				B5DEE7E22C423DE1003B32AE /* OrderIDTableViewCell.xib */,
+				B5E4E3712C490B1E00650B91 /* TotalPriceTableViewCell.swift */,
+				B5E4E3722C490B1E00650B91 /* TotalPriceTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -387,7 +403,10 @@
 			isa = PBXGroup;
 			children = (
 				B5FE53C72C3E842900629919 /* Modules */,
+				B5FE53B52C3E6C3E00629919 /* NetworkManager */,
 				B5614CBA2C40E97F004314EB /* TextFieldHelper.swift */,
+				B5E4E3772C49209C00650B91 /* ViewControllerTitleExtension.swift */,
+				B5E4E3752C490F8300650B91 /* CustomButton.swift */,
 				B5FE53752C3E4C8A00629919 /* Main.storyboard */,
 				B5FE53782C3E4C8F00629919 /* Assets.xcassets */,
 				B5FE537A2C3E4C8F00629919 /* LaunchScreen.storyboard */,
@@ -448,10 +467,9 @@
 			isa = PBXGroup;
 			children = (
 				B540C0662C418AFF009070EC /* ProductStoryboard.storyboard */,
-				B5FE53C12C3E833B00629919 /* View */,
 				B5FE53C02C3E830700629919 /* Model */,
+				B5FE53C12C3E833B00629919 /* View */,
 				B5FE53BD2C3E82A400629919 /* ViewModel */,
-				B5FE53B52C3E6C3E00629919 /* NetworkManager */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -530,6 +548,9 @@
 			isa = PBXGroup;
 			children = (
 				B5FE53AB2C3E57A100629919 /* ProductListViewController.swift */,
+				B5E4E3692C48D53300650B91 /* ChairsListViewController.swift */,
+				B5E4E3652C48D4DC00650B91 /* SofaListViewController.swift */,
+				B5E4E3672C48D51B00650B91 /* CupboardListViewController.swift */,
 				B54A9BD62C4016B700CA1E65 /* Cell */,
 			);
 			path = View;
@@ -704,6 +725,7 @@
 				B54A9BBA2C3FEE4000CA1E65 /* GenderTableViewCell.xib in Resources */,
 				B5DEE7DE2C42303C003B32AE /* OrdersStoryboard.storyboard in Resources */,
 				B54A9BB62C3FE59200CA1E65 /* RegisterTableViewCell.xib in Resources */,
+				B5E4E3742C490B1E00650B91 /* TotalPriceTableViewCell.xib in Resources */,
 				B54A9BD02C40098000CA1E65 /* CategoryCollectionViewCell.xib in Resources */,
 				B5DEE7EE2C4247B0003B32AE /* ProfilePictureTableViewCell.xib in Resources */,
 				B54A9BD52C4014F500CA1E65 /* RegisterViewStoryboard.storyboard in Resources */,
@@ -742,6 +764,7 @@
 				B5FE53702C3E4C8A00629919 /* AppDelegate.swift in Sources */,
 				B5614CC02C4108D3004314EB /* ResetPasswordViewController.swift in Sources */,
 				B5DEE7D82C422D35003B32AE /* MyOrdersTableViewController.swift in Sources */,
+				B5E4E3782C49209C00650B91 /* ViewControllerTitleExtension.swift in Sources */,
 				B5FE53B72C3E6C5F00629919 /* NetworkManager.swift in Sources */,
 				B5614CC52C411C91004314EB /* SidemenuViewController.swift in Sources */,
 				B5FE53AC2C3E57A100629919 /* ProductListViewController.swift in Sources */,
@@ -752,6 +775,7 @@
 				B5FE53B12C3E6BCC00629919 /* ProductsListViewModel.swift in Sources */,
 				B5FE53A22C3E506900629919 /* RegisterViewController.swift in Sources */,
 				B54A9BCF2C40098000CA1E65 /* CategoryCollectionViewCell.swift in Sources */,
+				B5E4E36A2C48D53300650B91 /* ChairsListViewController.swift in Sources */,
 				B5DEE7E92C42457D003B32AE /* MyAccountTableViewCell.swift in Sources */,
 				B5DEE7E32C423DE1003B32AE /* OrderIDTableViewCell.swift in Sources */,
 				B55BFF362C451AB300214BCA /* AddedAddressTableViewCell.swift in Sources */,
@@ -770,12 +794,16 @@
 				B5FE53AF2C3E5D1B00629919 /* ProductDetailsViewController.swift in Sources */,
 				B55BFF332C450A9600214BCA /* AddressListViewController.swift in Sources */,
 				B54A9BBD2C3FF48300CA1E65 /* RegisterButtonTableViewCell.swift in Sources */,
+				B5E4E3732C490B1E00650B91 /* TotalPriceTableViewCell.swift in Sources */,
 				B523F98D2C4689B800A1647B /* StoreLocatorViewController.swift in Sources */,
 				B54A9BCA2C40094F00CA1E65 /* DisplayCollectionViewCell.swift in Sources */,
 				B5BA19B62C47DC6E009DD925 /* ProductRatingViewController.swift in Sources */,
 				B5DEE7ED2C4247B0003B32AE /* ProfilePictureTableViewCell.swift in Sources */,
+				B5E4E3762C490F8300650B91 /* CustomButton.swift in Sources */,
+				B5E4E3662C48D4DC00650B91 /* SofaListViewController.swift in Sources */,
 				B5FE53C62C3E842100629919 /* DetailsManager.swift in Sources */,
 				B55BFF242C44EB5E00214BCA /* EditButtonTableViewCell.swift in Sources */,
+				B5E4E3682C48D51B00650B91 /* CupboardListViewController.swift in Sources */,
 				B5614CBB2C40E97F004314EB /* TextFieldHelper.swift in Sources */,
 				B5FE53BF2C3E82C300629919 /* ProductsListModel.swift in Sources */,
 				B5DEE7DB2C422D60003B32AE /* MyOrdersTableViewCell.swift in Sources */,

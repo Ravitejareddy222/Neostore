@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,7 +67,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etv-32-XIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-161" y="1"/>
+            <point key="canvasLocation" x="-624" y="1"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jRu-8o-Ckr">
+            <objects>
+                <viewController id="nX3-O2-OCC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WbJ-wO-Xib">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ijE-71-xyI">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bcj-P2-as1"/>
+                        <color key="backgroundColor" name="customred"/>
+                        <constraints>
+                            <constraint firstItem="ijE-71-xyI" firstAttribute="leading" secondItem="bcj-P2-as1" secondAttribute="leading" id="9ms-3K-3ND"/>
+                            <constraint firstItem="ijE-71-xyI" firstAttribute="top" secondItem="bcj-P2-as1" secondAttribute="top" id="HXu-tR-Etv"/>
+                            <constraint firstAttribute="bottom" secondItem="ijE-71-xyI" secondAttribute="bottom" id="mAj-Jv-HG2"/>
+                            <constraint firstItem="ijE-71-xyI" firstAttribute="trailing" secondItem="bcj-P2-as1" secondAttribute="trailing" id="owB-gW-ItN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2L-Ob-Zdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="0.70422535211267612"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="3mS-XK-mUc">
@@ -141,10 +169,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a21-1p-r2b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="1"/>
+            <point key="canvasLocation" x="830" y="1"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="customred">
+            <color red="0.9137254901960784" green="0.10980392156862745" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

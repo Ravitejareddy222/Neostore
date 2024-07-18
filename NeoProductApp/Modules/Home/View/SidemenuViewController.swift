@@ -58,16 +58,16 @@ extension SidemenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         case 2:
             let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            let vc = storyboard.instantiateViewController(identifier: "SofaListViewController") as? SofaListViewController
             navigationController?.pushViewController(vc!, animated: true)
         case 3:
             let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            let vc = storyboard.instantiateViewController(identifier: "ChairsListViewController") as? ChairsListViewController
             navigationController?.pushViewController(vc!, animated: true)
 
         case 4:
             let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            let vc = storyboard.instantiateViewController(identifier: "CupboardListViewController") as? CupboardListViewController
             navigationController?.pushViewController(vc!, animated: true)
         case 5:
             let storyboard = UIStoryboard(name: "MyAccountStoryboard", bundle: nil)

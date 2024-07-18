@@ -12,8 +12,9 @@ class ProductsListViewModel {
     
     var products: [Product] = []
     
-    func fetchProducts(completion: @escaping (Result<Void, Error>) -> Void) {
-        NetworkManager.shared.fetchDataFromAPI { [weak self] result in
+    func fetchProducts(product_category_id: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+        NetworkManager.shared.fetchDataFromAPI(product_category_id: product_category_id) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let products):

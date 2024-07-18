@@ -12,15 +12,22 @@ class AddedAddressTableViewCell: UITableViewCell {
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        toggleButton.layer.cornerRadius = toggleButton.frame.width/2
+        toggleButton.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func toggleButtonTapped(_ sender: Any) {
+        toggleButton.backgroundColor = UIColor.lightGray
+
     }
     
 }

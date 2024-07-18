@@ -13,6 +13,8 @@ class AddressListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       // UIBarButtonItem.navigationItem.backBarButtonItem = " "
+        self.title = "Address List"
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AddedAddressTableViewCell", bundle: nil), forCellReuseIdentifier: "AddedAddressTableViewCell")
@@ -21,6 +23,7 @@ class AddressListViewController: UIViewController {
     }
     
     func setUpView(){
+        
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAddressButtonTapped))
         navigationItem.rightBarButtonItem = rightBarButton
     }
@@ -42,6 +45,12 @@ extension AddressListViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: "EditButtonTableViewCell") as?
             EditButtonTableViewCell
             cell?.editButton.setTitle("PLACE ORDER", for: .normal)
+            cell?.editButton.backgroundColor = UIColor(named: "customred")
+            cell?.editButton.tintColor = UIColor(named: "customWhite")
+            let fontSize: CGFloat = 21
+                let fontWeight: UIFont.Weight = .bold
+            cell?.editButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
+            
             
             return cell ?? UITableViewCell()
         } else{
@@ -50,4 +59,24 @@ extension AddressListViewController: UITableViewDelegate, UITableViewDataSource 
             return cell ?? UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddedAddressTableViewCell") as?
+        AddedAddressTableViewCell
+    
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        let label = UILabel(frame: CGRect(x: 20, y: 0, width: headerView.frame.width, height: headerView.frame.height))
+        label.text = "Shipping Address"
+        label.font = .systemFont(ofSize: 18)
+        label.textColor = UIColor(named: "black#333333")
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        headerView.addSubview(label)
+        return headerView
+    }
 }
+
+
+

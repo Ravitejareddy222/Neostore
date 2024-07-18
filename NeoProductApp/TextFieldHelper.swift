@@ -30,6 +30,8 @@ class TextFieldHelper {
        ]
        textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
     }
+    
+   
 }
 
 extension UIColor {

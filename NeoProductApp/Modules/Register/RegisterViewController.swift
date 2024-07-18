@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
     }
     
     func setUpView(){
-        self.title = "Register"
+        setTitle("Register")
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]

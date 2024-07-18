@@ -37,7 +37,6 @@ extension ProductListTableViewCell: UICollectionViewDataSource, UICollectionView
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RatingCollectionViewCell", for: indexPath) as! RatingCollectionViewCell
-        
-        return cell ?? UICollectionViewCell()
+        return cell
     }
 }

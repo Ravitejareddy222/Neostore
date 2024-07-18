@@ -28,11 +28,10 @@
                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="editProfileButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="l9k-Xs-gOX"/>
+                            <action selector="editProfileButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D0O-7X-ngn"/>
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="Uwo-sl-XtS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="ZtQ-6f-VYz"/>
                     <constraint firstAttribute="trailing" secondItem="Uwo-sl-XtS" secondAttribute="trailing" constant="30" id="diG-d2-WaK"/>

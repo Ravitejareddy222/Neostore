@@ -13,7 +13,7 @@ class EditButtonTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,8 +23,8 @@ class EditButtonTableViewCell: UITableViewCell {
     }
     
     @IBAction func editProfileButtonTapped(_ sender: Any) {
+        editButton.setTitle("Submit", for: .normal)
         
-        editButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
-        editButton.setTitle("SUBMIT", for: .normal)
     }
+    
 }

@@ -19,6 +19,10 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var buynowButton: UIButton!
+    @IBOutlet weak var rateButton: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,19 @@ class ProductDetailsViewController: UIViewController {
         vc.modalPresentationStyle = .custom
             present(vc, animated: true, completion: nil)
         }
+    @IBAction func buynowButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "AddressStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "AddressListViewController") as? AddressListViewController
+        navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    @IBAction func rateButtonTapped(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductRatingViewController") as! ProductRatingViewController
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .custom
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {

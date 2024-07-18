@@ -8,12 +8,10 @@
 import UIKit
 
 class MyAccountViewController: UIViewController {
-     
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resetPasswordButton: UIButton!
-    
-    var isEditMode: Bool = false
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +28,11 @@ class MyAccountViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(identifier: "ResetPasswordViewController") as? ResetPasswordViewController
         navigationController?.pushViewController(vc!, animated: true)
     }
+    
+    @IBAction func editProfileButtonTapped(_ sender: Any) {
+        
+    }
+    
 }
 
 extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
@@ -44,6 +47,7 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EditButtonTableViewCell") as? EditButtonTableViewCell
+            cell?.backgroundColor = UIColor(named: "customred")
             return cell ??  UITableViewCell()
         } else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyAccountTableViewCell") as!  MyAccountTableViewCell

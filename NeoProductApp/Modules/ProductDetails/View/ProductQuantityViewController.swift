@@ -18,10 +18,6 @@ class ProductQuantityViewController: UIViewController {
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductRatingViewController") as! ProductRatingViewController
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .custom
-        present(vc, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-    
 }

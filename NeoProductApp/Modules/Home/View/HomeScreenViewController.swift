@@ -14,10 +14,12 @@ class HomeScreenViewController: UIViewController {
     
     var menu: SideMenuNavigationController?
     let images = [
-        ["coffeetable", "coffeetable", "coffeetable"],
-        ["coffeetable", "coffeetable"],
-        ["coffeetable", "coffeetable"]
+        ["Cupboards01", "Diningtable", "Chairs01", "coffeetable"],
+        ["table", "sofa"],
+        ["chair", "cupboard-icon"]
     ]
+    let categoryname = [[],["table", "sofa"],
+                        ["chair", "cupboard"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ class HomeScreenViewController: UIViewController {
     
         displayCollectionView?.register(UINib(nibName: "DisplayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DisplayCollectionViewCell")
         displayCollectionView?.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+        
         let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(menuButtonTapped))
         navigationItem.leftBarButtonItem = leftBarButton
         
@@ -78,11 +81,96 @@ extension HomeScreenViewController: UICollectionViewDataSource, UICollectionView
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DisplayCollectionViewCell", for: indexPath) as! DisplayCollectionViewCell
             cell.diaplayImage.image = UIImage(named: images[indexPath.section][indexPath.item])
+            cell.pageControl.currentPage = indexPath.row
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
             
+            cell.categoryname.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8).isActive = false
+            cell.categoryname.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8).isActive = false
+            cell.categoryname.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 8).isActive = false
+            cell.categoryname.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 8).isActive = false
+            
+            cell.categoryImage.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8).isActive = false
+            cell.categoryImage.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8).isActive = false
+            cell.categoryImage.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 8).isActive = false
+            cell.categoryImage.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 8).isActive = false
+            
+            
+            
+            switch  (indexPath.section, indexPath.item) {
+            case (1, 0):
+                NSLayoutConstraint.activate([
+                    cell.categoryname.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
+                    cell.categoryname.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 8),
+                    cell.categoryImage.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 8),
+                    cell.categoryImage.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8)
+                ])
+                
+            case (1, 1):
+                NSLayoutConstraint.activate([
+                    cell.categoryname.topAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 8),
+                    cell.categoryname.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8),
+                    cell.categoryImage.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
+                    cell.categoryImage.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 8)
+                ])
+            case (2, 0):
+                NSLayoutConstraint.activate([
+                    cell.categoryname.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
+                    cell.categoryname.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8),
+                    cell.categoryImage.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 8),
+                    cell.categoryImage.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 8)
+                ])
+            case (2, 1):
+                NSLayoutConstraint.activate([
+                    cell.categoryname.topAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: 8),
+                    cell.categoryname.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: 8),
+                    cell.categoryImage.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 8),
+                    cell.categoryImage.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 8)
+                ])
+                
+            default:
+                break
+                
+            }
+            if indexPath.section > 0 {
+                cell.categoryname.text =  categoryname[indexPath.section][indexPath.item]
+                cell.categoryImage.image = UIImage(named: images[indexPath.section][indexPath.item])
+                cell.categoryImage.backgroundColor = UIColor.red
+                
+            }
             return cell
+            
+        }
+        
+        //let topC = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1.0, constant: 15.0)
+        //let leftC = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal, toItem: containerView, attribute: .left, multiplier: 1.0, constant: 15.0)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch (indexPath.section, indexPath.item) {
+            
+        case (1, 0):
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        case (1, 1):
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "SofaListViewController") as? SofaListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+            
+        case (2 , 0):
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ChairsListViewController") as? ChairsListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+            
+        case (2, 1):
+            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "CupboardListViewController") as? CupboardListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        default:
+            break
         }
     }
     
@@ -95,9 +183,8 @@ extension HomeScreenViewController: UICollectionViewDataSource, UICollectionView
             case 1, 2:
                 return self.createVerticalSection()
             default:
-                return nil
+                return nil}
             }
-        }
     }
     
     func createHorizontalSection() -> NSCollectionLayoutSection {

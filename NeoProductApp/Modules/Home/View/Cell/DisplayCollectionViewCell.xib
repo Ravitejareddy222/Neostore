@@ -40,6 +40,7 @@
             <size key="customSize" width="380" height="261"/>
             <connections>
                 <outlet property="diaplayImage" destination="UHu-el-RN5" id="Q4A-Nw-qsv"/>
+                <outlet property="pageControl" destination="HL0-ZY-tdC" id="njT-eG-Vea"/>
             </connections>
             <point key="canvasLocation" x="274.80916030534348" y="-10.563380281690142"/>
         </collectionViewCell>

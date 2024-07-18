@@ -8,7 +8,7 @@
 import UIKit
 
 class EditProfileViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+//    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +17,6 @@ class EditProfileViewController: UIViewController {
 //        tableView.register(UINib(nibName: "MyAccountTableViewCell", bundle: nil), forCellReuseIdentifier: "MyAccountTableViewCell")
 //        tableView.register(UINib(nibName: "ProfilePictureTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfilePictureTableViewCell")
 //        tableView.register(UINib(nibName: "EditButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "EditButtonTableViewCell")
-        
-    
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {

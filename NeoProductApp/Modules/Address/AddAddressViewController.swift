@@ -13,6 +13,8 @@ class AddAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
+        self.title = "Add Address"
 
     }
     

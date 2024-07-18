@@ -12,7 +12,7 @@ class ProductRatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
     }
     
 

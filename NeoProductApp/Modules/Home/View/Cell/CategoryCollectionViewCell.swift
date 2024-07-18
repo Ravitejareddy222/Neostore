@@ -9,6 +9,8 @@ import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var categoryname: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

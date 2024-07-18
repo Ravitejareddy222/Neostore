@@ -10,6 +10,8 @@ import UIKit
 class DisplayCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var diaplayImage: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

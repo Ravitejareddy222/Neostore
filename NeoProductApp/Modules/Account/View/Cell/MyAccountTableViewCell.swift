@@ -13,7 +13,7 @@ class MyAccountTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        userTextField.isUserInteractionEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,5 +21,9 @@ class MyAccountTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//    func enableTextField(){
+//        userTextField.isUserInteractionEnabled = true
+//    }
     
 }
