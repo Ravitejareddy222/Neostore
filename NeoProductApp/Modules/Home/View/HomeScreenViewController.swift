@@ -137,15 +137,10 @@ extension HomeScreenViewController: UICollectionViewDataSource, UICollectionView
                 cell.categoryname.text =  categoryname[indexPath.section][indexPath.item]
                 cell.categoryImage.image = UIImage(named: images[indexPath.section][indexPath.item])
                 cell.categoryImage.backgroundColor = UIColor.red
-                
             }
             return cell
             
         }
-        
-        //let topC = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1.0, constant: 15.0)
-        //let leftC = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal, toItem: containerView, attribute: .left, multiplier: 1.0, constant: 15.0)
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

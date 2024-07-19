@@ -33,6 +33,8 @@ class MyAccountViewController: UIViewController {
         
     }
     
+    
+    
 }
 
 extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,6 +50,10 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 6 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EditButtonTableViewCell") as? EditButtonTableViewCell
             cell?.backgroundColor = UIColor(named: "customred")
+            cell?.hideResetPasswordClosure = { [weak self] in
+                self?.resetPasswordButton.isHidden = true
+                
+            }
             return cell ??  UITableViewCell()
         } else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyAccountTableViewCell") as!  MyAccountTableViewCell
@@ -75,9 +81,11 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
             if let leftImage = UIImage(systemName: textFieldImage) {
                 TextFieldHelper.addleftIconImage(to: cell.userTextField, image: leftImage, placeholderText: textFieldtxt)
             }
+           
+            
             return cell
         }
-        return UITableViewCell()
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

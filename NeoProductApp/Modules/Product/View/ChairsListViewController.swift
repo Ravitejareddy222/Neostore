@@ -18,19 +18,21 @@ class ChairsListViewController: UIViewController {
         tableViewSetUp()
         getList()
     }
-    func getList(){
-        productsListViewModel.fetchProducts(product_category_id: 2) { [weak self] result in
+    
+    func getList() {
+        productsListViewModel.fetchProducts(product_category_id: 2) { [weak self] error in
             guard let self = self else { return }
-            switch result {
-            case .success:
+            
+            if let error = error {
+                print("Failed to fetch products: \(error.localizedDescription)")
+            } else {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            case .failure(let error):
-                print("Failed to fetch products: \(error.localizedDescription)")
             }
         }
     }
+    
     
     func tableViewSetUp(){
         tableView.delegate = self
@@ -54,7 +56,6 @@ extension ChairsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductListTableViewCell") as? ProductListTableViewCell
-        
         var product = productsListViewModel.products[indexPath.row]
         cell?.productname.text = product.name
 
@@ -62,12 +63,20 @@ extension ChairsListViewController: UITableViewDelegate, UITableViewDataSource {
             if let image = UIImage(named: imageString){
                 cell?.productImage.image = image
             }
-
         cell?.productCost.text = "Rs \(String(product.cost))"
         cell?.productManufacturer.text = product.producer
         
         return cell ?? UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as? ProductDetailsViewController
+        
+        let product = productsListViewModel.products[indexPath.row]
+        vc?.id = product.id
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     
     
 }

@@ -50,4 +50,26 @@ extension MyCartViewController: UITableViewDelegate, UITableViewDataSource {
         return  UITableViewCell()
         
     }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            completionHandler(true)
+        }
+        if let deleteImage = UIImage(named: "delete") {
+               let resizedImage = deleteImage.resized(to: CGSize(width: 45, height: 45))
+               deleteAction.image = resizedImage
+           }
+        deleteAction.backgroundColor = .white
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    }
+    
+    
+}
+extension UIImage {
+    func resized(to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: size))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }

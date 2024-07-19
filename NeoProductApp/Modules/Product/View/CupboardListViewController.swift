@@ -18,16 +18,16 @@ class CupboardListViewController: UIViewController {
         tableViewSetUp()
         getList()
     }
-    func getList(){
-        productsListViewModel.fetchProducts(product_category_id: 4) { [weak self] result in
+    func getList() {
+        productsListViewModel.fetchProducts(product_category_id: 4) { [weak self] error in
             guard let self = self else { return }
-            switch result {
-            case .success:
+            
+            if let error = error {
+                print("Failed to fetch products: \(error.localizedDescription)")
+            } else {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            case .failure(let error):
-                print("Failed to fetch products: \(error.localizedDescription)")
             }
         }
     }
@@ -39,7 +39,8 @@ class CupboardListViewController: UIViewController {
     }
     
    func setUpView(){
-        self.title = "Cuopboards"
+        self.title = "Cupboards"
+       
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
@@ -69,6 +70,12 @@ extension CupboardListViewController: UITableViewDelegate, UITableViewDataSource
         return cell ?? UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as? ProductDetailsViewController
+        
+        let product = productsListViewModel.products[indexPath.row]
+        vc?.id = product.id
+        navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 

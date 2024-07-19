@@ -12,18 +12,33 @@ class ProductsListViewModel {
     
     var products: [Product] = []
     
-    func fetchProducts(product_category_id: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+    func fetchProducts(product_category_id: Int, completion: @escaping (Error?) -> Void) {
+        let urlString = "http://staging.php-dev.in:8844/trainingapp/api/products/getList"
+        var urlComponents = URLComponents(string: urlString)!
         
-        NetworkManager.shared.fetchDataFromAPI(product_category_id: product_category_id) { [weak self] result in
+        urlComponents.queryItems = [
+            URLQueryItem(name: "product_category_id", value: "\(product_category_id)")
+        ]
+        guard let url = urlComponents.url else {
+            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to create URL"])
+            completion(error)
+            return
+        }
+        NetworkManager.shared.connectNetwork(url: url, method: "GET") { [weak self] (response: ProductResponse?, error: Error?) in
             guard let self = self else { return }
-            switch result {
-            case .success(let products):
-                self.products = products
-                completion(.success(()))
-            case .failure(let error):
-                completion(.failure(error))
+            
+            if let error = error {
+                completion(error)
+                return
             }
             
+            if let response = response {
+                self.products = response.data
+                completion(nil)
+            } else {
+                let error = NSError(domain: "NoData", code: 0, userInfo: nil)
+                completion(error)
+            }
         }
     }
     

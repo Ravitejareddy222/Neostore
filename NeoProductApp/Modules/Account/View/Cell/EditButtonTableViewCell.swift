@@ -8,8 +8,9 @@
 import UIKit
 
 class EditButtonTableViewCell: UITableViewCell {
-    
+     
     @IBOutlet weak var editButton: UIButton!
+    var hideResetPasswordClosure: (() -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,12 +20,15 @@ class EditButtonTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    
     }
     
     @IBAction func editProfileButtonTapped(_ sender: Any) {
         editButton.setTitle("Submit", for: .normal)
-        
+        hideResetPasswordClosure?()
     }
+     
+    
+    
     
 }

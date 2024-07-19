@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RegisterTableViewCell" rowHeight="56" id="KGk-i7-Jjw" customClass="RegisterTableViewCell" customModule="NeoProductApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="381" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhV-iV-k7E">
+                        <rect key="frame" x="30" y="8" width="321" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="8ID-Wl-jm9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="yhV-iV-k7E" secondAttribute="trailing" constant="30" id="4FK-ZP-vQf"/>
+                    <constraint firstAttribute="bottom" secondItem="yhV-iV-k7E" secondAttribute="bottom" constant="8" id="7v2-az-gd7"/>
+                    <constraint firstItem="yhV-iV-k7E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="B5e-Y1-ODt"/>
+                    <constraint firstItem="yhV-iV-k7E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="PH4-tP-a4I"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="customred"/>
+            <connections>
+                <outlet property="userTextField" destination="yhV-iV-k7E" id="lEg-ha-5H8"/>
+            </connections>
+            <point key="canvasLocation" x="122.90076335877862" y="59.859154929577471"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="customred">
+            <color red="0.91399997472763062" green="0.10999999940395355" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

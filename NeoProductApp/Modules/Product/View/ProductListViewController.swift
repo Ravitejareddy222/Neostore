@@ -19,16 +19,17 @@ class ProductListViewController: UIViewController {
         tableViewSetUp()
         getList()
     }
-    func getList(){
-        productsListViewModel.fetchProducts(product_category_id: 1) { [weak self] result in
+    
+    func getList() {
+        productsListViewModel.fetchProducts(product_category_id: 1) { [weak self] error in
             guard let self = self else { return }
-            switch result {
-            case .success:
+            
+            if let error = error {
+                print("Failed to fetch products: \(error.localizedDescription)")
+            } else {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            case .failure(let error):
-                print("Failed to fetch products: \(error.localizedDescription)")
             }
         }
     }
@@ -46,13 +47,11 @@ class ProductListViewController: UIViewController {
         ]
         navigationController?.navigationBar.tintColor = UIColor.white
     }
-    
 }
+
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return productsListViewModel.getCount()
-       
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,10 +71,12 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as? ProductDetailsViewController
+        
+        let product = productsListViewModel.products[indexPath.row]
+        vc?.id = product.id
+        vc?.categoryId = product.product_category_id
         navigationController?.pushViewController(vc!, animated: true)
     }
-    
-    
 }
 
 extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
