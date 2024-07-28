@@ -17,14 +17,14 @@ class SidemenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let tableView = tableView else {
-                    print("Error: tableView is not connected")
-                    return
-                }
+            print("Error: tableView is not connected")
+            return
+        }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .black
         tableView.register(UINib(nibName: "SidemenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SidemenuTableViewCell")
-     }
+    }
 }
 
 extension SidemenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -33,44 +33,44 @@ extension SidemenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SidemenuTableViewCell") as?  SidemenuTableViewCell
-            let item = indexPath.row
-            cell?.listLabel.text = menuList[item]
-            cell?.backgroundColor = .black
-            cell?.listLabel.textColor = .white
-            let imageName = menuImages[item]
-            cell?.leftImageIcon.image = UIImage(named: imageName)
-            return cell ?? UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SidemenuTableViewCell") as?  SidemenuTableViewCell
+        let item = indexPath.row
+        cell?.listLabel.text = menuList[item]
+        cell?.backgroundColor = .black
+        cell?.listLabel.textColor = .white
+        let imageName = menuImages[item]
+        cell?.leftImageIcon.image = UIImage(named: imageName)
+        return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath.row {
         case 0:
-            let storyboard = UIStoryboard(name: "OrdersStoryboard", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MyCartViewController") as? MyCartViewController
             navigationController?.pushViewController(vc!, animated: true)
             
         case 1:
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
             navigationController?.pushViewController(vc!, animated: true)
-        
+            
         case 2:
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "SofaListViewController") as? SofaListViewController
             navigationController?.pushViewController(vc!, animated: true)
         case 3:
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "ChairsListViewController") as? ChairsListViewController
             navigationController?.pushViewController(vc!, animated: true)
-
+            
         case 4:
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "CupboardListViewController") as? CupboardListViewController
             navigationController?.pushViewController(vc!, animated: true)
         case 5:
-            let storyboard = UIStoryboard(name: "MyAccountStoryboard", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MyAccountViewController") as? MyAccountViewController
             navigationController?.pushViewController(vc!, animated: true)
         case 6:
@@ -79,11 +79,12 @@ extension SidemenuViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc!, animated: true)
             
         case 7:
-            let storyboard = UIStoryboard(name: "OrdersStoryboard", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "MyOrdersTableViewController") as? MyOrdersTableViewController
             navigationController?.pushViewController(vc!, animated: true)
         case 8:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            AccessTokenManager.shared.deleteAccessToken()
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController
             navigationController?.pushViewController(vc!, animated: true)
             

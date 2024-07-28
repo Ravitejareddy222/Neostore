@@ -18,7 +18,7 @@ struct Product: Codable {
     let view_count: Int
     let created: String
     let modified: String
-    let product_images: String
+    let product_images: URL
 }
 
 struct ProductResponse: Codable {

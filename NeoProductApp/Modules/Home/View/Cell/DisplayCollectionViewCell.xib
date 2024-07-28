@@ -17,8 +17,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="380" height="260"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeetable" translatesAutoresizingMaskIntoConstraints="NO" id="UHu-el-RN5">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffeetable" translatesAutoresizingMaskIntoConstraints="NO" id="UHu-el-RN5">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="260"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="260" id="JAk-5H-jqM"/>
+                            <constraint firstAttribute="width" constant="380" id="zx5-ff-OCy"/>
+                        </constraints>
                     </imageView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="HL0-ZY-tdC">
                         <rect key="frame" x="132" y="223" width="140" height="26"/>
@@ -48,7 +52,7 @@
     <resources>
         <image name="coffeetable" width="259" height="194"/>
         <namedColor name="customred">
-            <color red="0.9137254901960784" green="0.10980392156862745" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.91399997472763062" green="0.10999999940395355" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

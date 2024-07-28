@@ -12,7 +12,7 @@ class ProductDetailsViewModel{
     var productDetails: ProductDetails?
     
     func getProductDetails(product_id: Int, completion: @escaping (Error?) -> Void){
-        let urlString = "http://staging.php-dev.in:8844/trainingapp/api/products/getDetail"
+        let urlString = Constants.productDetailUrl
         var urlComponents = URLComponents(string: urlString)!
         
         urlComponents.queryItems = [
@@ -23,7 +23,7 @@ class ProductDetailsViewModel{
             completion(error)
             return
         }
-        NetworkManager.shared.connectNetwork(url: url, method: "GET") { [weak self] (response: ProductDetailsResponse?, error: Error?) in
+        NetworkManager.shared.getData(url: url) { [weak self] (statusCode, response: ProductDetailsResponse?, error: Error?) in
             guard let self = self else { return }
             
             if let error = error {
@@ -56,6 +56,25 @@ class ProductDetailsViewModel{
             break
         }
         return category
+    }
+    
+    func getProductId() -> Int{
+        return productDetails?.id ?? 0
+    }
+    
+    func getRatings() -> Int{
+        return productDetails?.rating ?? 0
+    }
+    
+    func getProductName() -> String{
+        return productDetails?.name ?? ""
+    }
+    
+    func getProductImage() -> String? {
+        if let url = productDetails?.product_images.first?.image {
+            return url.absoluteString
+        }
+        return nil
     }
     
  }

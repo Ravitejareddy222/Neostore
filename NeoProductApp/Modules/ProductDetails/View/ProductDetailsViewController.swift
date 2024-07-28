@@ -7,17 +7,17 @@
 
 import UIKit
 import SDWebImage
+import IQKeyboardManagerSwift
+
 
 class ProductDetailsViewController: UIViewController {
-    
     
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productManufacturerLabel: UILabel!
     @IBOutlet weak var productCostLabel: UILabel!
-    @IBOutlet weak var productRatingLabel: UILabel!
+    @IBOutlet weak var productRatingCollectionView: UICollectionView!
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var productCategoryLabel: UILabel!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -26,6 +26,8 @@ class ProductDetailsViewController: UIViewController {
     
     var id = 1
     var categoryId = 1
+    var productQuantity = 0
+    var ratings: Int = 0
     
     var productDetailsViewModel = ProductDetailsViewModel()
     
@@ -33,7 +35,16 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         collectionViewsetUp()
         getDetails()
+        if let flowLayout = productRatingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.minimumInteritemSpacing = 0
+            flowLayout.itemSize = CGSize(width: 13, height: 13)
+        }
         
+//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            flowLayout.minimumInteritemSpacing = 0
+//            flowLayout.itemSize = CGSize(width: 100, height: 100)
+//        }
+//
     }
     
     func getDetails(){
@@ -65,6 +76,7 @@ class ProductDetailsViewController: UIViewController {
         if let imageUrl = productImage?.image{
             imageView.sd_setImage(with: imageUrl)
         }
+        ratings = productDetailsViewModel.getRatings()
     }
     
     func collectionViewsetUp(){
@@ -72,28 +84,31 @@ class ProductDetailsViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
+        productRatingCollectionView.delegate = self
+        productRatingCollectionView.dataSource = self
+        productRatingCollectionView.register(UINib(nibName: "RatingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RatingCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "DisplayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DisplayCollectionViewCell")
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGesture)
+        collectionView.register(UINib(nibName: "ImagesDisplayCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImagesDisplayCollectionViewCell")
+        
     }
     
-    @objc func imageTapped() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductQuantityViewController") as! ProductQuantityViewController
+    @IBAction func buynowButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProductQuantityViewController") as! ProductQuantityViewController
+        vc.productId = productDetailsViewModel.getProductId()
+        vc.productName = productDetailsViewModel.getProductName()
+        vc.productImage = productDetailsViewModel.getProductImage() ?? ""
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
         present(vc, animated: true, completion: nil)
     }
-    @IBAction func buynowButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "AddressStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "AddressListViewController") as? AddressListViewController
-        navigationController?.pushViewController(vc!, animated: true)
-        
-    }
+    
     @IBAction func rateButtonTapped(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ProductRatingViewController") as! ProductRatingViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProductRatingViewController") as! ProductRatingViewController
+        vc.productName = productDetailsViewModel.getProductName()
+        vc.productImage = productDetailsViewModel.getProductImage() ?? ""
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
         present(vc, animated: true, completion: nil)
@@ -101,22 +116,50 @@ class ProductDetailsViewController: UIViewController {
     
 }
 
-extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productDetailsViewModel.productDetails?.product_images.count ?? 0
+        if collectionView == productRatingCollectionView {
+            return 5
+        } else{
+            return productDetailsViewModel.productDetails?.product_images.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DisplayCollectionViewCell", for: indexPath) as? DisplayCollectionViewCell
         
-        cell?.pageControl.isHidden = true
-        let productImage = productDetailsViewModel.productDetails?.product_images[indexPath.row]
-        if let imageUrl = productImage?.image{
-            cell?.diaplayImage.sd_setImage(with: imageUrl) 
+        if collectionView == productRatingCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RatingCollectionViewCell", for: indexPath) as! RatingCollectionViewCell
+            if indexPath.row < ratings {
+                cell.ratingImageView.image = UIImage(named: "starfill1")
+            } else {
+                cell.ratingImageView.image = UIImage(named: "starempty1")
+            }
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesDisplayCollectionViewCell", for: indexPath) as! ImagesDisplayCollectionViewCell
+            //cell.pageControl.isHidden = true
+            let productImage = productDetailsViewModel.productDetails?.product_images[indexPath.row]
+            if let imageUrl = productImage?.image {
+                cell.imagesDisplay.sd_setImage(with: imageUrl)
+            }
+            return cell
         }
-
-        return cell ?? UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesDisplayCollectionViewCell", for: indexPath) as! ImagesDisplayCollectionViewCell
+        let productImage = productDetailsViewModel.productDetails?.product_images[indexPath.row]
+        if let imageUrl = productImage?.image {
+            imageView.sd_setImage(with: imageUrl)
+        }
+    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    //        if collectionView == collectionView{
+    //            let cellWidth = collectionView.frame.width/3 - 10
+    //            let cellheight = collectionView.frame.width/3 - 5
+    //            return CGSize(width: cellWidth, height: cellheight)
+    //        }
+    //    }
     
 }

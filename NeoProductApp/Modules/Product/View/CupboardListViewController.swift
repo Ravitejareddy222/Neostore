@@ -58,14 +58,12 @@ extension CupboardListViewController: UITableViewDelegate, UITableViewDataSource
         
         var product = productsListViewModel.products[indexPath.row]
         cell?.productname.text = product.name
-
-        let imageString = product.product_images
-            if let image = UIImage(named: imageString){
-                cell?.productImage.image = image
-            }
-
+        let imageUrl = product.product_images
+        cell?.productImage.sd_setImage(with: imageUrl)
         cell?.productCost.text = "Rs \(String(product.cost))"
         cell?.productManufacturer.text = product.producer
+        let rating = productsListViewModel.getRatings(item: indexPath.row)
+        cell?.configure(rating: rating)
         
         return cell ?? UITableViewCell()
     }

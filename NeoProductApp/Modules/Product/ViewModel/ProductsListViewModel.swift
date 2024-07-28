@@ -13,7 +13,8 @@ class ProductsListViewModel {
     var products: [Product] = []
     
     func fetchProducts(product_category_id: Int, completion: @escaping (Error?) -> Void) {
-        let urlString = "http://staging.php-dev.in:8844/trainingapp/api/products/getList"
+        
+        let urlString = Constants.productListUrl
         var urlComponents = URLComponents(string: urlString)!
         
         urlComponents.queryItems = [
@@ -24,7 +25,7 @@ class ProductsListViewModel {
             completion(error)
             return
         }
-        NetworkManager.shared.connectNetwork(url: url, method: "GET") { [weak self] (response: ProductResponse?, error: Error?) in
+        NetworkManager.shared.getData(url: url) { [weak self] (statusCode, response: ProductResponse?, error: Error?) in
             guard let self = self else { return }
             
             if let error = error {
@@ -51,5 +52,9 @@ class ProductsListViewModel {
             return nil
         }
         return products[index]
+    }
+    
+    func getRatings(item: Int) -> Int{
+        return products[item].rating
     }
 }

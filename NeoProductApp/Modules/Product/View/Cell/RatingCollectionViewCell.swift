@@ -9,6 +9,8 @@ import UIKit
 
 class RatingCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var ratingImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
        

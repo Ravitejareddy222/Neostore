@@ -7,6 +7,7 @@ target 'NeoProductApp' do
 
  #pod 'SideMenu'
  pod 'SDWebImage'
+pod 'IQKeyboardManagerSwift'
 
 
 

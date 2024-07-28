@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Account View Controller-->
+        <scene sceneID="ytq-kt-sst">
+            <objects>
+                <viewController storyboardIdentifier="MyAccountViewController" id="rdt-PT-vam" customClass="MyAccountViewController" customModule="NeoProductApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jIe-eI-9nS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-Ow-gVE" userLabel="ContentView">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uzw-6y-6sR">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="693"/>
+                                        <color key="backgroundColor" name="customred"/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLz-Sn-6x0">
+                                        <rect key="frame" x="0.0" y="693" width="393" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZGU-Oz-gsx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="RESET PASSWORD">
+                                            <color key="titleColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetPasswordButtonTapped:" destination="rdt-PT-vam" eventType="touchUpInside" id="G5P-oT-fA2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Uzw-6y-6sR" firstAttribute="top" secondItem="VvE-Ow-gVE" secondAttribute="top" id="2eE-pq-uAm"/>
+                                    <constraint firstItem="hLz-Sn-6x0" firstAttribute="leading" secondItem="Uzw-6y-6sR" secondAttribute="leading" id="Edh-Ue-RaA"/>
+                                    <constraint firstItem="Uzw-6y-6sR" firstAttribute="leading" secondItem="VvE-Ow-gVE" secondAttribute="leading" id="F5m-kX-jST"/>
+                                    <constraint firstItem="hLz-Sn-6x0" firstAttribute="trailing" secondItem="Uzw-6y-6sR" secondAttribute="trailing" id="JYZ-A7-zog"/>
+                                    <constraint firstAttribute="bottom" secondItem="hLz-Sn-6x0" secondAttribute="bottom" constant="50" id="Pu9-oE-MiE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uzw-6y-6sR" secondAttribute="trailing" id="YQi-g4-P5m"/>
+                                    <constraint firstItem="hLz-Sn-6x0" firstAttribute="top" secondItem="Uzw-6y-6sR" secondAttribute="bottom" id="jn1-qD-sC0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gO8-VU-GGd"/>
+                        <color key="backgroundColor" name="customred"/>
+                        <constraints>
+                            <constraint firstItem="VvE-Ow-gVE" firstAttribute="top" secondItem="gO8-VU-GGd" secondAttribute="top" id="1Af-4Y-lut"/>
+                            <constraint firstAttribute="bottom" secondItem="VvE-Ow-gVE" secondAttribute="bottom" id="P7m-H5-8s5"/>
+                            <constraint firstItem="VvE-Ow-gVE" firstAttribute="trailing" secondItem="gO8-VU-GGd" secondAttribute="trailing" id="RO6-1n-L85"/>
+                            <constraint firstItem="VvE-Ow-gVE" firstAttribute="leading" secondItem="gO8-VU-GGd" secondAttribute="leading" id="yeH-O3-YcX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ContentView" destination="VvE-Ow-gVE" id="Nlw-1t-Qox"/>
+                        <outlet property="resetPasswordButton" destination="hLz-Sn-6x0" id="D3l-Yn-gG4"/>
+                        <outlet property="tableView" destination="Uzw-6y-6sR" id="SpW-Pe-lbI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etv-32-XIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="1"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="3mS-XK-mUc">
+            <objects>
+                <viewController storyboardIdentifier="ResetPasswordViewController" id="wxl-2L-qt3" customClass="ResetPasswordViewController" customModule="NeoProductApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K81-PA-7Io">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NeoSTORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-vN-DnF">
+                                <rect key="frame" x="30" y="99" width="333" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="t2k-dJ-TTW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iG1-Ah-Z67">
+                                <rect key="frame" x="30" y="229" width="333" height="220"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" placeholder="Current Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVj-W5-rho">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="lGm-y3-LRw"/>
+                                        </constraints>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XiJ-we-WRn">
+                                        <rect key="frame" x="0.0" y="60" width="333" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbj-3z-rYt">
+                                        <rect key="frame" x="0.0" y="120" width="333" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttP-lF-AtE">
+                                        <rect key="frame" x="0.0" y="180" width="333" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="RESET PASSWORD"/>
+                                        <connections>
+                                            <action selector="resetPasswordButtonTapped:" destination="wxl-2L-qt3" eventType="touchUpInside" id="1i0-9F-jQF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iUg-aX-BSG"/>
+                        <color key="backgroundColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iG1-Ah-Z67" firstAttribute="top" secondItem="WZg-vN-DnF" secondAttribute="bottom" constant="70" id="9UX-Ku-1aM"/>
+                            <constraint firstItem="WZg-vN-DnF" firstAttribute="leading" secondItem="iUg-aX-BSG" secondAttribute="leading" constant="30" id="MSx-Ng-z1P"/>
+                            <constraint firstItem="iUg-aX-BSG" firstAttribute="trailing" secondItem="WZg-vN-DnF" secondAttribute="trailing" constant="30" id="bV5-NN-PYZ"/>
+                            <constraint firstItem="iG1-Ah-Z67" firstAttribute="leading" secondItem="iUg-aX-BSG" secondAttribute="leading" constant="30" id="cGo-Pq-OHn"/>
+                            <constraint firstItem="WZg-vN-DnF" firstAttribute="top" secondItem="iUg-aX-BSG" secondAttribute="top" constant="40" id="ha5-Ez-apD"/>
+                            <constraint firstItem="iUg-aX-BSG" firstAttribute="trailing" secondItem="iG1-Ah-Z67" secondAttribute="trailing" constant="30" id="u3E-wE-aUt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BX6-4s-i1j"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="fbj-3z-rYt" id="vAq-aS-Iwc"/>
+                        <outlet property="currentPasswordTextField" destination="EVj-W5-rho" id="TNz-8M-2cU"/>
+                        <outlet property="newPasswordTextField" destination="XiJ-we-WRn" id="Qsg-uG-3kw"/>
+                        <outlet property="resetPasswordButton" destination="ttP-lF-AtE" id="8f7-N7-uVE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a21-1p-r2b" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179" y="1"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="customred">
+            <color red="0.91399997472763062" green="0.10999999940395355" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

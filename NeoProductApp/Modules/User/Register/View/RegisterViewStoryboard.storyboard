@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register View Controller-->
+        <scene sceneID="Eg7-F2-Ibe">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" id="LLk-hj-jdA" customClass="RegisterViewController" customModule="NeoProductApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O5r-oT-Ax1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NeoSTORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZQ-HI-KV5">
+                                <rect key="frame" x="30" y="97" width="333" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="FL8-Nv-auU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ow5-sk-O6K" userLabel="contentView">
+                                <rect key="frame" x="0.0" y="185" width="393" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gp2-nU-zsC">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="667"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="separatorColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gp2-nU-zsC" secondAttribute="trailing" id="aFR-xb-D7M"/>
+                                    <constraint firstAttribute="bottom" secondItem="gp2-nU-zsC" secondAttribute="bottom" id="fsg-co-WGv"/>
+                                    <constraint firstItem="gp2-nU-zsC" firstAttribute="top" secondItem="Ow5-sk-O6K" secondAttribute="top" id="s59-7t-0HU"/>
+                                    <constraint firstItem="gp2-nU-zsC" firstAttribute="leading" secondItem="Ow5-sk-O6K" secondAttribute="leading" id="uOD-95-K0R"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xme-Uv-eqr"/>
+                        <color key="backgroundColor" name="customred"/>
+                        <constraints>
+                            <constraint firstItem="xme-Uv-eqr" firstAttribute="trailing" secondItem="oZQ-HI-KV5" secondAttribute="trailing" constant="30" id="2ug-p0-pU4"/>
+                            <constraint firstAttribute="bottom" secondItem="Ow5-sk-O6K" secondAttribute="bottom" id="3Zm-IF-cAg"/>
+                            <constraint firstItem="Ow5-sk-O6K" firstAttribute="top" secondItem="oZQ-HI-KV5" secondAttribute="bottom" constant="8" symbolic="YES" id="4zW-Qa-AsL"/>
+                            <constraint firstItem="Ow5-sk-O6K" firstAttribute="leading" secondItem="xme-Uv-eqr" secondAttribute="leading" id="EC5-Zd-Vxc"/>
+                            <constraint firstItem="oZQ-HI-KV5" firstAttribute="top" secondItem="xme-Uv-eqr" secondAttribute="top" constant="38" id="hTM-GO-Apd"/>
+                            <constraint firstItem="oZQ-HI-KV5" firstAttribute="leading" secondItem="xme-Uv-eqr" secondAttribute="leading" constant="30" id="pg5-fQ-7ll"/>
+                            <constraint firstItem="Ow5-sk-O6K" firstAttribute="trailing" secondItem="xme-Uv-eqr" secondAttribute="trailing" id="qpF-fA-Kw4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gp2-nU-zsC" id="g2v-w8-m2o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90J-zP-UfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2483" y="42"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="customred">
+            <color red="0.91399997472763062" green="0.10999999940395355" blue="0.10199999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

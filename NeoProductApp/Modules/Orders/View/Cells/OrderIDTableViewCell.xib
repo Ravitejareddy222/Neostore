@@ -51,7 +51,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY : 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1p-aB-mdq">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="black#333333"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$45.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEJ-XJ-Wzc">
@@ -81,6 +81,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="productCategoryLabel" destination="26H-11-mD1" id="ukh-zX-72E"/>
+                <outlet property="productCostLabel" destination="TEJ-XJ-Wzc" id="f6K-V2-aLq"/>
+                <outlet property="productImage" destination="DKd-Jx-zDf" id="a3G-8r-Ntt"/>
+                <outlet property="productNameLabel" destination="8Rv-Yv-Jkt" id="Iry-jS-84B"/>
+                <outlet property="quantityLabel" destination="q1p-aB-mdq" id="wMq-hF-Fm4"/>
+            </connections>
             <point key="canvasLocation" x="106.87022900763358" y="33.802816901408455"/>
         </tableViewCell>
     </objects>
@@ -90,7 +97,7 @@
             <color red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black#333333">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

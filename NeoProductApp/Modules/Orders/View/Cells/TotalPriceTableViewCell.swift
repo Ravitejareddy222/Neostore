@@ -8,6 +8,8 @@
 import UIKit
 
 class TotalPriceTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var totalCost: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

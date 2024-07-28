@@ -38,7 +38,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-Kn-Dpe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LANDMARK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-Kn-Dpe">
                                         <rect key="frame" x="20" y="176" width="353" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="vjL-zm-wFd"/>
@@ -214,7 +214,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressTextView" destination="kvX-7U-fWF" id="RXY-HH-5RO"/>
+                        <outlet property="cityTextField" destination="nYv-R8-WYZ" id="Gnj-cx-Sk2"/>
+                        <outlet property="countryTextField" destination="nEI-EU-ub0" id="gci-xu-lw6"/>
+                        <outlet property="landmarkTextField" destination="BhW-2L-EL6" id="DGJ-R2-5RT"/>
+                        <outlet property="pincodeTextField" destination="xyS-Sl-avU" id="mBf-OY-8Ua"/>
                         <outlet property="saveAddress" destination="Gc7-ea-y8f" id="pZn-Cs-bSe"/>
+                        <outlet property="stateTextField" destination="vej-bf-Kqf" id="BG3-Je-NbL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -266,7 +272,7 @@
     </scenes>
     <resources>
         <namedColor name="black#333333">
-            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

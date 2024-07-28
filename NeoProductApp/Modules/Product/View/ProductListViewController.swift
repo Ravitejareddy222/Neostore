@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProductListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -38,6 +39,8 @@ class ProductListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ProductListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductListTableViewCell")
+        //collectionView
+        
     }
     
    func setUpView(){
@@ -56,16 +59,15 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductListTableViewCell") as? ProductListTableViewCell
+        let ratingCell = tableView.dequeueReusableCell(withIdentifier: "RatingCollectionViewCell") as? RatingCollectionViewCell
         let product = productsListViewModel.products[indexPath.row]
         cell?.productname.text = product.name
-
-        let imageString = product.product_images
-            if let image = UIImage(named: imageString){
-                cell?.productImage.image = image
-            }
-
+        let imageUrl = product.product_images
+        cell?.productImage.sd_setImage(with: imageUrl)
         cell?.productCost.text = "Rs \(String(product.cost))"
         cell?.productManufacturer.text = product.producer
+        let rating = productsListViewModel.getRatings(item: indexPath.row)
+        cell?.configure(rating: rating)
         return cell ?? UITableViewCell()
     }
     
@@ -79,16 +81,16 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RatingCollectionViewCell", for: indexPath) as! RatingCollectionViewCell
-        return cell ?? UICollectionViewCell()
-    }
-    
-    
-}
+//extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 5
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RatingCollectionViewCell", for: indexPath) as! RatingCollectionViewCell
+//        return cell ?? UICollectionViewCell()
+//    }
+//    
+//    
+//}
 
