@@ -13,13 +13,13 @@ extension UIViewController{
             let fontSize: CGFloat = 24.0
             let font = UIFont.boldSystemFont(ofSize: fontSize)
             let textAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor.black,
+                .foregroundColor: UIColor.white,
                 .font: font
             ]
             
             if let navigationController = self.navigationController {
                 navigationController.navigationBar.titleTextAttributes = textAttributes
-                self.title = title  // Set the title of the view controller
+                self.title = title
             } else {
                 print("Warning: This view controller is not embedded in a navigation controller.")
             }

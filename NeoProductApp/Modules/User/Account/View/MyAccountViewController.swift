@@ -15,11 +15,13 @@ class MyAccountViewController: UIViewController {
     
     var viewModel = MyAccountViewModel()
     var selectedImage: UIImage?
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSetUp()
         fetchUser()
+        setTitle("My Account")
     }
     
     func fetchUser(){
@@ -59,8 +61,8 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyAccountTableViewCell") as! MyAccountTableViewCell
         cell.delegate = self
+        print("Cell for row at: setting image")
         cell.setImage(selectedImage)
-        
         if let personImage = UIImage(systemName: "person.fill") {
             TextFieldHelper.addleftIconImage(to: cell.firstNameTextField, image: personImage, placeholderText: "First Name")
         }
@@ -92,6 +94,10 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyAccountViewController: MyAccountTableViewCellDelegate {
+//    func reloadTableView() {
+//        self.tableView.reloadData()
+//    }
+    
     
     func didEditProfileButtonTapped() {
         resetPasswordButton.isHidden = true
@@ -106,16 +112,22 @@ extension MyAccountViewController: MyAccountTableViewCellDelegate {
     }
     
     func setImage(_ image: UIImage?) {
-        selectedImage = image
-        tableView.reloadData()
+        print("1: setImage called in MyAccountViewController")
+            selectedImage = image
+            print("2: Image set and about to reload table view")
+            tableView.reloadData()
     }
 }
 
 extension MyAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("Image picker did finish picking media")
         if let selectedImage = info[.originalImage] as? UIImage {
+            print("Image picked")
+            imagePicker.delegate = self
             self.selectedImage = selectedImage
+            self.setImage(selectedImage)
             print(selectedImage)
         }
         picker.dismiss(animated: true, completion: nil)

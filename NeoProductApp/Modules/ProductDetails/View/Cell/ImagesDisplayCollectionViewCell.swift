@@ -13,7 +13,7 @@ class ImagesDisplayCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
     }
 
 }

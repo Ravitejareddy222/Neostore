@@ -55,9 +55,9 @@ class NetworkManager {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         let postDataString = dict.map { key, value in
-                return "\(key)=\(value)"
-            }.joined(separator: "&")
-            
+            return "\(key)=\(value)"
+        }.joined(separator: "&")
+        
         request.httpBody = postDataString.data(using: .utf8)
         request.setValue("\(accessToken)", forHTTPHeaderField: "access_token")
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

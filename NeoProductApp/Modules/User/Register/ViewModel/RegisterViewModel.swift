@@ -35,24 +35,27 @@ class RegisterViewModel{
                 completion(error)
                 return
             }
-            
-            switch statusCode {
-            case 200:
-                if let response = response {
-                    print("Registration successful: \(response)")
-                    completion(nil)
-                } else {
-                    let error = NSError(domain: "NoData", code: 0, userInfo: nil)
-                    completion(error)
-                }
-            case 400:
-                let error = NSError(domain: "BadRequest", code: statusCode ?? 0, userInfo: [NSLocalizedDescriptionKey: "Data missing"])
-                completion(error)
-            
-            default:
-                let error = NSError(domain: "UnhandledStatusCode", code: statusCode ?? 0, userInfo: nil)
-                completion(error)
+            if let response = response{
+                
+                completion(nil)
             }
+//            switch statusCode {
+//            case 200:
+//                if let response = response {
+//                    print("Registration successful: \(response)")
+//                    completion(nil)
+//                } else {
+//                    let error = NSError(domain: "NoData", code: 0, userInfo: nil)
+//                    completion(error)
+//                }
+//            case 400:
+//                let error = NSError(domain: "BadRequest", code: statusCode ?? 0, userInfo: [NSLocalizedDescriptionKey: "Data missing"])
+//                completion(error)
+//
+//            default:
+//                let error = NSError(domain: "UnhandledStatusCode", code: statusCode ?? 0, userInfo: nil)
+//                completion(error)
+//            }
         }
     }
     

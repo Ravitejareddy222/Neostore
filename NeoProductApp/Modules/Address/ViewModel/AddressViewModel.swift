@@ -15,9 +15,14 @@ class AddressViewModel{
         addressArray = UserDefaults.standard.array(forKey: "MyAddressList") ?? []
         return addressArray
     }
+    func updateAddressArray(array: [Any]){
+        addressArray = array
+        UserDefaults.standard.set(addressArray, forKey: "MyAddressList")
+    }
     
     func getTableViewCellCount() -> Int{
         return addressArray.count+1
     }
+    
     
 }

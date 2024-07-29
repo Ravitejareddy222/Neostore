@@ -9,7 +9,6 @@ import UIKit
 import MapKit
 
 class StoreLocatorViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var storeMapView: MKMapView!
     
@@ -18,13 +17,13 @@ class StoreLocatorViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupMap()
+        setTitle("Store Locator")
     }
     
     func setupMap() {
         let initialLocation = CLLocation(latitude: 37.7749, longitude: -122.4194)
         let region = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         storeMapView.setRegion(region, animated: true)
-        
         let annotation = MKPointAnnotation()
         annotation.title = "San Francisco"
         annotation.coordinate = initialLocation.coordinate

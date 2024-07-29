@@ -40,8 +40,8 @@ class ChairsListViewController: UIViewController {
         tableView.register(UINib(nibName: "ProductListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductListTableViewCell")
     }
     
-   func setUpView(){
-        self.title = "Chairs"
+    func setUpView(){
+        setTitle("Chairs")
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
@@ -75,8 +75,5 @@ extension ChairsListViewController: UITableViewDelegate, UITableViewDataSource {
         vc?.id = product.id
         navigationController?.pushViewController(vc!, animated: true)
     }
-    
-    
-    
 }
 

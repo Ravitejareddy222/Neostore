@@ -20,21 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        
-        if AccessTokenManager.shared.isLoggedIn() {
-            print("logged in")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController")
-            window?.rootViewController = homeVC
-            window?.makeKeyAndVisible()
-        } else {
-            print("signedout")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-            window?.rootViewController = loginVC
-            window?.makeKeyAndVisible()
-        }
-        
         return true
     }
     

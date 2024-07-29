@@ -37,7 +37,6 @@ class AccessTokenManager{
     }
     
     func isLoggedIn() -> Bool {
-        print("........................................................................")
         print(!accessToken.isEmpty)
         return !accessToken.isEmpty
     }

@@ -49,7 +49,7 @@ class MyCartViewModel{
         return cartResponse?.data[item].product.product_category ?? ""
     }
     func getProductCost(item: Int) -> Int{
-        return cartResponse?.data[item].product.cost ?? 0
+        return cartResponse?.data[item].product.sub_total ?? 0
     }
     func getProductQuantity(item: Int) -> Int{
         if let cartItem = cartResponse?.data[item]{
@@ -65,6 +65,14 @@ class MyCartViewModel{
         return totalCount
     }
     
-    
-    
+    func removeProduct(at index: Int) {
+            guard index >= 0 && index < (cartResponse?.data.count ?? 0) else { return }
+            
+            cartResponse?.data.remove(at: index)
+            cartResponse?.count -= 1
+       
+            // Recalculate total cost if needed
+        //cartResponse?.total = cartResponse?.data.reduce(0) { $0 + ($1.product.cost * $1.quantity) } ?? 0
+        }
+     
 }

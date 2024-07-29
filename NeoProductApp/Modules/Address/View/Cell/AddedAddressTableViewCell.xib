@@ -67,7 +67,7 @@
                                     <backgroundConfiguration key="background" image="xmark" catalog="system"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="toggleButtonTapped:" destination="Zis-hq-y5B" eventType="touchUpInside" id="i6v-Ra-WdZ"/>
+                                    <action selector="deleteButtonTapped:" destination="Zis-hq-y5B" eventType="touchUpInside" id="ONv-rS-tmj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,8 +96,9 @@
             <viewLayoutGuide key="safeArea" id="iXQ-EX-1eZ"/>
             <connections>
                 <outlet property="addressLabel" destination="sDh-ih-e9j" id="XDT-xC-WQt"/>
+                <outlet property="deleteButton" destination="Zud-Vk-TXq" id="lRM-HC-EPm"/>
                 <outlet property="nameLabel" destination="cbz-k3-mww" id="gqO-lB-QpP"/>
-                <outlet property="toggleButton" destination="kuH-rd-Vth" id="1p0-6f-dHS"/>
+                <outlet property="toggleButton" destination="kuH-rd-Vth" id="I3w-pP-Yuc"/>
             </connections>
             <point key="canvasLocation" x="121.37404580152672" y="42.605633802816904"/>
         </tableViewCell>

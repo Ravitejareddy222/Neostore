@@ -23,6 +23,14 @@ class MyCartViewController: UIViewController {
         super.viewDidLoad()
         setUpTableView()
         getCartItems()
+        setTitle("My Cart")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCartItems()
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
     }
     
     func setUpTableView(){
@@ -48,9 +56,14 @@ class MyCartViewController: UIViewController {
     }
     
     @IBAction func orderNowButtonTapped(_ sender: Any){
-        let storyboard = UIStoryboard(name: "AddressStoryboard", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "AddressListViewController") as? AddressListViewController
-        navigationController?.pushViewController(vc!, animated: true)
+        let total = viewModel.getTotalCount()
+        if total > 2{
+            let storyboard = UIStoryboard(name: "AddressStoryboard", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "AddressListViewController") as? AddressListViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        } else{
+            ShowAlert.showAlert(on: self, title: "Error", message: "Add atleast one element to cart")
+        }
     }
     
 }
@@ -125,6 +138,8 @@ extension MyCartViewController: UITableViewDelegate, UITableViewDataSource {
         let index = Int(indexPath.row)
         let productId = viewModel.getProductId(item: index)
         
+        viewModel.removeProduct(at: index)
+        
         deleteCartViewModel.deleteCart(product_id: productId){ [weak self] error in
             guard let self = self else {return}
             
@@ -157,10 +172,10 @@ extension MyCartViewController: MyCartTableViewCellDelegate{
             
             guard let self = self else { return }
             if let error  = error {
-                print("failed to place order: \(error.localizedDescription)")
+                print("failed to edit: \(error.localizedDescription)")
             } else{
                 DispatchQueue.main.async {
-                    ShowAlert.showAlert(on: self, title: "Congrats", message: "")
+                    
                 }
             }
         }

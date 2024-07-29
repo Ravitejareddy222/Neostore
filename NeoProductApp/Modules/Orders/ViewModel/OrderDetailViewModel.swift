@@ -42,7 +42,6 @@ class OrderDetailsViewModel{
     }
     
     func getProductName(item: Int) -> String{
-        print(orderData?.order_details[item].prod_name ?? "")
         return orderData?.order_details[item].prod_name ?? ""
     }
     func getProductImage(item: Int) -> String {
@@ -53,7 +52,6 @@ class OrderDetailsViewModel{
         }
       
     func getProductCategory(item: Int) -> String{
-        print(orderData?.order_details[item].prod_cat_name ?? "")
         return orderData?.order_details[item].prod_cat_name ?? ""
     }
     

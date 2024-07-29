@@ -11,11 +11,12 @@ class ProductRatingViewModel{
     
     var dict: [String: Any] = [ : ]
     
-    func setProductRatings(product_id: Int, ratings: Int , completion: @escaping (Error?) -> Void){
+    func setProductRatings(with parameters: ProductRatingParameters, completion: @escaping (Error?) -> Void){
         let urlString = Constants.productRatingUrl
         guard let url = URL(string: urlString) else { return }
-        dict["product_id"] = product_id
-        dict["ratingoptional"] = ratings
+        
+        dict["product_id"] = parameters.product_id
+        dict["rating"] = parameters.rating
     
         NetworkManager.shared.postData(url: url, dict: dict) { [weak self] (statusCode, response: ProductRatingResponse?, error: Error?) in
             guard let self = self else { return }

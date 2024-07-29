@@ -15,7 +15,7 @@ class MyOrdersTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "My Orders"
+        setTitle("My Orders")
         tableViewSetUp()
         getMyOrders()
     }
@@ -55,7 +55,7 @@ extension MyOrdersTableViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "OrdersStoryboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "OrderIDTableViewController") as? OrderIDTableViewController
         vc?.orderId = viewModel.getOrderId(item: indexPath.row)
         print(viewModel.getOrderId(item: indexPath.row))

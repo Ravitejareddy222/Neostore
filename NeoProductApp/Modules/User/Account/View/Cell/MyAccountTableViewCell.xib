@@ -20,7 +20,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gS9-RK-8wc">
                         <rect key="frame" x="30" y="8" width="321" height="510"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xID-Fh-Fin">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xID-Fh-Fin">
                                 <rect key="frame" x="90.666666666666686" y="0.0" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="U5R-xx-gx0"/>

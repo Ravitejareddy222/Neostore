@@ -26,6 +26,7 @@ class RegisterTableViewCell: UITableViewCell {
     
     var viewModel = RegisterViewModel()
     weak var delegate: RegisterTableViewCellDelegate?
+    weak var registerViewContoller: UIViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,7 +49,7 @@ class RegisterTableViewCell: UITableViewCell {
               let email = emailTextField.text,
               let password = passowrdTextField.text,
               let confirmPassword = confirmPasswordTextField.text,
-              let phoneNumber = Int(phoneNumberTextField.text ?? "")
+              let phoneNumber = phoneNumberTextField.text
         else {
             return
         }
@@ -58,7 +59,10 @@ class RegisterTableViewCell: UITableViewCell {
         } else{
             gender = "F"
         }
-        
+        guard !firstName.isEmpty, !lastName.isEmpty, !email.isEmpty, !phoneNumber.isEmpty, !gender.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else{
+            ShowAlert.showAlert(on: registerViewContoller!, title: "error", message: "Please fill in all the details")
+            return
+        }
         if password == confirmPassword {
             let parameters = RegistrationParameters(first_name: firstName,
                                                     last_name: lastName,
@@ -75,14 +79,16 @@ class RegisterTableViewCell: UITableViewCell {
                     print("Registration failed: \(error.localizedDescription)")
                 } else {
                     DispatchQueue.main.async {
+                        //ShowAlert.showAlert(on: UIViewController, title: <#T##String#>, message: <#T##String#>)
                         self.delegate?.didRegisterButtonTapped()
+                        
                     }
                 }
             }
         } else{
-//            DispatchQueue.main.async{
-//                ShowAlert.showAlert(on: self, title: "Error", message: "Passwords do not match")
-//            }
+            DispatchQueue.main.async{
+                ShowAlert.showAlert(on: self.registerViewContoller!, title: "Error", message: "Passwords do not match")
+            }
         }
     }
     

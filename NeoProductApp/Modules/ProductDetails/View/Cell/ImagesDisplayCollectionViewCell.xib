@@ -34,7 +34,7 @@
             </constraints>
             <size key="customSize" width="101" height="97"/>
             <connections>
-                <outlet property="imagesDisplay" destination="DZ8-U0-PsM" id="dMP-m0-4Tk"/>
+                <outlet property="imagesDisplay" destination="DZ8-U0-PsM" id="7Zo-3o-lfm"/>
             </connections>
             <point key="canvasLocation" x="103.81679389312977" y="2.8169014084507045"/>
         </collectionViewCell>

@@ -14,9 +14,6 @@ class ProductQuantityViewController: UIViewController {
     @IBOutlet weak var productNamelabel: UILabel!
     @IBOutlet weak var productImageView: UIImageView!
     
-    
-    
-    
     var viewModel = AddToCartViewModel()
     var productId = 0
     var productImage: String = ""
@@ -24,13 +21,20 @@ class ProductQuantityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         productNamelabel.text = productName
+        setUpView()
+    }
+    func setUpView(){
+        productQuantityTextField.layer.borderColor = UIColor.green.cgColor
         if let imageUrl = URL(string: productImage){
             productImageView.sd_setImage(with: imageUrl)
         }
+        let backgroundView = UIView(frame: view.bounds)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissPopup))
-        view.addGestureRecognizer(tapGesture)
+        backgroundView.addGestureRecognizer(tapGesture)
+        view.addSubview(backgroundView)
+        view.sendSubviewToBack(backgroundView)
     }
     @objc private func dismissPopup() {
         dismiss(animated: true, completion: nil)

@@ -9,8 +9,8 @@ import Foundation
 
 struct EditCartResponse: Codable{
     var status: Int
-    var data: Int
+    var data: Bool
     var total_carts: Int
-    var message: Int
-    var user_msg: Int
+    var message: String
+    var user_msg: String
 }

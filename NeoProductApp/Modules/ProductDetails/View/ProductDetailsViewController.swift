@@ -38,6 +38,7 @@ class ProductDetailsViewController: UIViewController {
         if let flowLayout = productRatingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.minimumInteritemSpacing = 0
             flowLayout.itemSize = CGSize(width: 13, height: 13)
+            flowLayout.invalidateLayout()
         }
         
 //        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -73,10 +74,12 @@ class ProductDetailsViewController: UIViewController {
         productDescriptionLabel.text = productDetails.description
         productCategoryLabel.text = productDetailsViewModel.getProductCategoryName()
         let productImage = productDetailsViewModel.productDetails?.product_images[0]
+        ratings = productDetailsViewModel.getRatings()
+        print("--------------", ratings)
         if let imageUrl = productImage?.image{
             imageView.sd_setImage(with: imageUrl)
         }
-        ratings = productDetailsViewModel.getRatings()
+        productRatingCollectionView.reloadData()
     }
     
     func collectionViewsetUp(){
@@ -109,6 +112,7 @@ class ProductDetailsViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "ProductRatingViewController") as! ProductRatingViewController
         vc.productName = productDetailsViewModel.getProductName()
         vc.productImage = productDetailsViewModel.getProductImage() ?? ""
+        vc.productId = productDetailsViewModel.getProductId()
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
         present(vc, animated: true, completion: nil)
@@ -130,15 +134,16 @@ extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionVi
         
         if collectionView == productRatingCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RatingCollectionViewCell", for: indexPath) as! RatingCollectionViewCell
+            
             if indexPath.row < ratings {
                 cell.ratingImageView.image = UIImage(named: "starfill1")
-            } else {
+            } else{
                 cell.ratingImageView.image = UIImage(named: "starempty1")
             }
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImagesDisplayCollectionViewCell", for: indexPath) as! ImagesDisplayCollectionViewCell
-            //cell.pageControl.isHidden = true
+            
             let productImage = productDetailsViewModel.productDetails?.product_images[indexPath.row]
             if let imageUrl = productImage?.image {
                 cell.imagesDisplay.sd_setImage(with: imageUrl)

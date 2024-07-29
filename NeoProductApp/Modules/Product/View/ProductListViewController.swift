@@ -11,7 +11,6 @@ import SDWebImage
 class ProductListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    
     var productsListViewModel = ProductsListViewModel()
     
     override func viewDidLoad() {
@@ -44,7 +43,7 @@ class ProductListViewController: UIViewController {
     }
     
    func setUpView(){
-        self.title = "Tables"
+       setTitle("Tables")
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
@@ -81,16 +80,4 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-//extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 5
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RatingCollectionViewCell", for: indexPath) as! RatingCollectionViewCell
-//        return cell ?? UICollectionViewCell()
-//    }
-//    
-//    
-//}
 

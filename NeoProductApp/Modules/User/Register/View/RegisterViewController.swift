@@ -23,11 +23,12 @@ class RegisterViewController: UIViewController {
     }
     
     func setUpView(){
-        setTitle("Register")
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white
-        ]
-        navigationController?.navigationBar.tintColor = UIColor.white
+
+    setTitle("Register")
+//        navigationController?.navigationBar.titleTextAttributes = [
+//            NSAttributedString.Key.foregroundColor: UIColor.white
+//        ]
+//        navigationController?.navigationBar.tintColor = UIColor.white
         tableView.register(UINib(nibName: "RegisterTableViewCell", bundle: nil), forCellReuseIdentifier: "RegisterTableViewCell")
         
     }
@@ -41,6 +42,7 @@ extension RegisterViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegisterTableViewCell", for: indexPath) as! RegisterTableViewCell
         cell.delegate = self
+        cell.registerViewContoller = self
         
         if let personImage = UIImage(systemName: "person.fill") {
             TextFieldHelper.addleftIconImage(to: cell.firstNameTextField, image: personImage, placeholderText: "First Name")

@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct ProductRatingParameters: Codable{
+    var product_id: Int
+    var rating: Int
+}
+
 struct ProductRatingResponse: Codable{
     let status: Int
     let data: ProductRatingData

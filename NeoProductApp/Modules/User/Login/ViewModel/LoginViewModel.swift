@@ -34,18 +34,21 @@ class LoginViewModel{
             if let response = response {
                 self.loginData = response.data
                 self.accessToken = loginData?.access_token ?? ""
-                print(accessToken)
                 AccessTokenManager.shared.saveAccessToken(token: accessToken)
                 self.statusCode = statusCode ?? 0
                 completion(nil)
-            } else {
-                let error = NSError(domain: "NoData", code: 0, userInfo: nil)
-                completion(error)
             }
         }
     }
     
     func getStatusCode() -> Int{
         return statusCode
+    }
+    func getName() -> String{
+        let name = "\(String(describing: loginData?.first_name)) \(String(describing: loginData?.last_name))"
+        return name
+    }
+    func getEmail() -> String{
+        return loginData?.email ?? ""
     }
 }

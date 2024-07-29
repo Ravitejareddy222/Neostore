@@ -10,6 +10,8 @@ import SideMenu
 
 class HomeScreenViewController: UIViewController {
     @IBOutlet weak var displayCollectionView: UICollectionView!
+    var name: String?
+    var email: String?
     
     
     var menu: SideMenuNavigationController?
@@ -24,11 +26,15 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        sideMenuSetUp()
+        navigationItem.backButtonTitle = " "
+        sideMenuSetUp(email: email ?? "", name: name ?? "")
     }
     
-    func sideMenuSetUp(){
+    func sideMenuSetUp(email: String, name: String){
+        setTitle("NeoSTORE")
         let sideMenuVC = storyboard?.instantiateViewController(identifier: "SidemenuViewController") as!SidemenuViewController
+        sideMenuVC.name = name
+        sideMenuVC.email = email
         menu = SideMenuNavigationController(rootViewController: sideMenuVC)
         menu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = menu
@@ -144,28 +150,24 @@ extension HomeScreenViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: UIViewController?
         switch (indexPath.section, indexPath.item) {
-            
         case (1, 0):
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
-            navigationController?.pushViewController(vc!, animated: true)
+             vc = storyboard.instantiateViewController(identifier: "ProductListViewController") as? ProductListViewController
         case (1, 1):
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "SofaListViewController") as? SofaListViewController
-            navigationController?.pushViewController(vc!, animated: true)
+             vc = storyboard.instantiateViewController(identifier: "SofaListViewController") as? SofaListViewController
             
         case (2 , 0):
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ChairsListViewController") as? ChairsListViewController
-            navigationController?.pushViewController(vc!, animated: true)
-            
+             vc = storyboard.instantiateViewController(identifier: "ChairsListViewController") as? ChairsListViewController
         case (2, 1):
-            let storyboard = UIStoryboard(name: "ProductStoryboard", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "CupboardListViewController") as? CupboardListViewController
-            navigationController?.pushViewController(vc!, animated: true)
+             vc = storyboard.instantiateViewController(identifier: "CupboardListViewController") as? CupboardListViewController
         default:
-            break
+            vc = nil
+        }
+        if let viewController = vc {
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     

@@ -49,16 +49,20 @@ class LoginViewController: UIViewController {
             viewModel.loginUser(with: params){ [weak self] error in
                 guard let self = self else{return}
                 let statusCode = self.viewModel.getStatusCode()
+                
                 DispatchQueue.main.async {
                     if statusCode == 200 {
-                        let storyboard = UIStoryboard(name: "HomeScreenStoryboard", bundle: nil)
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(identifier: "HomeScreenViewController") as? HomeScreenViewController
+                        vc?.name = self.viewModel.getName()
+                        vc?.email = self.viewModel.getEmail()
                         self.navigationController?.pushViewController(vc!, animated: true)
                     } else if statusCode == 401{
                         ShowAlert.showAlert(on: self, title: "Error", message: "Please enter the Valid Email and Password")
                     }
                     
                     if let error = error {
+                        ShowAlert.showAlert(on: self, title: "Error", message: "Please enter the Valid Email and Password")
                         print("Login failed: \(error.localizedDescription)")
                     }
                     
@@ -81,12 +85,16 @@ class LoginViewController: UIViewController {
     
     
     func submitButtonTapped(){
+        isForgotPasswordMode = false
         let email = usernameTextField.text ?? ""
+        
         forgotPasswordViewModel.sendRequest(email: email){ [weak self] error in
             guard let self = self else { return }
             
             if let error = error{
+                ShowAlert.showAlert(on: self, title: "error", message: "Please enter the Valid Email and password")
                 print("failed: \(error)")
+                
             }
             DispatchQueue.main.async {
                 let statusCode = self.forgotPasswordViewModel.getStatusCode()

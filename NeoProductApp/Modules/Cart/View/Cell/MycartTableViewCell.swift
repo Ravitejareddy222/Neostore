@@ -62,8 +62,10 @@ extension MycartTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        quantityTextField.text = "\(quantity[row])"
-        if let index = indexPath{
+        let selectedQuantity = quantity[row]
+                quantityTextField.text = "\(selectedQuantity)"
+        if let index = indexPath {
+            print("Selected Quantity: \(selectedQuantity), Index: \(index)")
             let qty = Int(quantityTextField.text ?? "") ?? 0
             delegate?.didQuantityChange(quantity: qty, index: index)
         }

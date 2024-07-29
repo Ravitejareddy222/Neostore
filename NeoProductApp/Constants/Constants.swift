@@ -16,6 +16,7 @@ class Constants{
     static let productRatingUrl = "http://staging.php-dev.in:8844/trainingapp/api/products/setRating"
     static let changePasswordUrl = "http://staging.php-dev.in:8844/trainingapp/api/users/change"
     static let fetchAccountDetailsUrl = "http://staging.php-dev.in:8844/trainingapp/api/users/getUserData"
+    static let editProfileUrl = "http://staging.php-dev.in:8844/trainingapp/api/users/update"
     static let addToCartUrl = "http://staging.php-dev.in:8844/trainingapp/api/addToCart"
     static let editCartUrl = "http://staging.php-dev.in:8844/trainingapp/api/editCart"
     static let deleteCartUrl = "http://staging.php-dev.in:8844/trainingapp/api/deleteCart"

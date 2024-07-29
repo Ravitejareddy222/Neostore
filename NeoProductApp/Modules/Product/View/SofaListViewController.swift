@@ -39,7 +39,7 @@ class SofaListViewController: UIViewController {
     }
     
    func setUpView(){
-        self.title = "Sofas"
+       setTitle("Sofas")
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]

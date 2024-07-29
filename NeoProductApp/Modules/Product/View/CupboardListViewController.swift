@@ -39,7 +39,7 @@ class CupboardListViewController: UIViewController {
     }
     
    func setUpView(){
-        self.title = "Cupboards"
+       setTitle("Cupboards")
        
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white

@@ -63,6 +63,7 @@ class ProductDetailsViewModel{
     }
     
     func getRatings() -> Int{
+        print(productDetails?.rating ?? 0)
         return productDetails?.rating ?? 0
     }
     

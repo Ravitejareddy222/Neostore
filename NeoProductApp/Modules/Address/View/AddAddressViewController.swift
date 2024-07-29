@@ -15,16 +15,12 @@ class AddAddressViewController: UIViewController {
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var pincodeTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
-
-
-    
     @IBOutlet weak var saveAddress: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backButtonTitle = ""
-        self.title = "Add Address"
-
+        setTitle("Add Address")
     }
     
     @IBAction func saveAddressButtonTapped(_ sender: Any) {
@@ -44,7 +40,7 @@ class AddAddressViewController: UIViewController {
         addressArray.append(address)
         print(addressArray)
         UserDefaults.standard.set(addressArray, forKey: "MyAddressList")
-    
+        
         let storyboard = UIStoryboard(name: "AddressStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "AddressListViewController") as? AddressListViewController
         navigationController?.pushViewController(vc!, animated: true)

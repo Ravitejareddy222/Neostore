@@ -71,145 +71,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "53B8AB4F-1D2B-4513-9B9D-4F324117E884"
-            shouldBeEnabled = "No"
+            uuid = "A4EE54E3-022C-4CE0-8040-06224F758F0D"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NeoProductApp/Modules/ProductDetails/View/ProductDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "rateButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F3DBB746-C298-496E-9811-9ABC15E2582F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NeoProductApp/Modules/ProductDetails/View/ProductDetailsViewController.swift"
+            filePath = "NeoProductApp/Modules/User/Account/View/Cell/MyAccountTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "rateButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BAA4234D-F84A-417E-89E5-05FFC0E89AE3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NeoProductApp/Modules/ProductDetails/View/ProductDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "buynowButtonTapped(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BAA4234D-F84A-417E-89E5-05FFC0E89AE3 - a6f695ce4e328045"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NeoProductApp.ProductDetailsViewController.buynowButtonTapped(Any) -&gt; ()"
-                  moduleName = "NeoProductApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neo/Desktop/NeoProductApp/NeoProductApp/Modules/ProductDetails/View/ProductDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "85">
-               </Location>
-               <Location
-                  uuid = "BAA4234D-F84A-417E-89E5-05FFC0E89AE3 - a6f695ce4e328045"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NeoProductApp.ProductDetailsViewController.buynowButtonTapped(Any) -&gt; ()"
-                  moduleName = "NeoProductApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neo/Desktop/NeoProductApp/NeoProductApp/Modules/ProductDetails/View/ProductDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "166">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "509460A2-635B-470D-A120-AED149F67DFC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NeoProductApp/Modules/Initial screens/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "509460A2-635B-470D-A120-AED149F67DFC - 7c32393d2f12d171"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NeoProductApp.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
-                  moduleName = "NeoProductApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neo/Desktop/NeoProductApp/NeoProductApp/Modules/Initial%20screens/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "917">
-               </Location>
-               <Location
-                  uuid = "509460A2-635B-470D-A120-AED149F67DFC - 7c32393d2f12d171"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NeoProductApp.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
-                  moduleName = "NeoProductApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/neo/Desktop/NeoProductApp/NeoProductApp/Modules/Initial%20screens/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "903">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "46FD3CB8-2267-41EB-908D-21EA9E0E7685"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NeoProductApp/Modules/Home/View/HomeScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
